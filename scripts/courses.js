@@ -1,4 +1,4 @@
-// Course data array (modified with your completed courses)
+// Course data array
 const courses = [
     { code: "CSE 110", name: "Programming Building Blocks", credits: 3, completed: true },
     { code: "WDD 130", name: "Web Fundamentals", credits: 3, completed: true },
@@ -12,6 +12,7 @@ const courses = [
 // DOM elements
 const courseCardsContainer = document.getElementById('courseCards');
 const totalCreditsElement = document.getElementById('totalCredits');
+const courseCountElement = document.getElementById('courseCount');
 const filterButtons = document.querySelectorAll('.filter-btn');
 
 let currentFilter = 'all';
@@ -27,20 +28,23 @@ function displayCourses(filter = 'all') {
         );
     }
 
-    // Calculate total credits
+    // Calculate total credits and count
     const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
     totalCreditsElement.textContent = totalCredits;
+    courseCountElement.textContent = filteredCourses.length;
 
     // Create course cards
     filteredCourses.forEach(course => {
         const card = document.createElement('div');
         card.className = `course-card ${course.completed ? 'completed' : ''}`;
 
+        const checkmark = course.completed ? '✓ ' : '';
+
         card.innerHTML = `
-            <h3>${course.code}</h3>
+            <h3>${checkmark}${course.code}</h3>
             <p>${course.name}</p>
-            <p>Credits: ${course.credits}</p>
-            <p class="status">${course.completed ? '✓ Completed' : 'In Progress'}</p>
+            <p class="credits">Credits: ${course.credits}</p>
+            <p class="status">${course.completed ? 'Completed' : 'In Progress'}</p>
         `;
 
         courseCardsContainer.appendChild(card);
@@ -50,12 +54,8 @@ function displayCourses(filter = 'all') {
 // Filter button event listeners
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Remove active class from all buttons
         filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
         button.classList.add('active');
-
-        // Get filter value
         currentFilter = button.getAttribute('data-filter');
         displayCourses(currentFilter);
     });

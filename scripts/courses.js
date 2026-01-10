@@ -1,6 +1,6 @@
-// Course data array
+// Course data (modify completed as needed)
 const courses = [
-    { code: "CSE 110", name: "Programming Building Blocks", credits: 3, completed: true },
+    { code: "CSE 110", name: "introduction to Programming", credits: 3, completed: true },
     { code: "WDD 130", name: "Web Fundamentals", credits: 3, completed: true },
     { code: "CSE 111", name: "Programming with Functions", credits: 3, completed: true },
     { code: "CSE 210", name: "Programming with Classes", credits: 3, completed: true },
@@ -9,57 +9,46 @@ const courses = [
     { code: "WDD 221", name: "Client Side Programming", credits: 3, completed: false }
 ];
 
-// DOM elements
-const courseCardsContainer = document.getElementById('courseCards');
-const totalCreditsElement = document.getElementById('totalCredits');
-const courseCountElement = document.getElementById('courseCount');
-const filterButtons = document.querySelectorAll('.filter-btn');
-
-let currentFilter = 'all';
-
 // Display courses
 function displayCourses(filter = 'all') {
-    courseCardsContainer.innerHTML = '';
-    let filteredCourses = courses;
+    const container = document.getElementById('courseCards');
+    let filtered = courses;
 
     if (filter !== 'all') {
-        filteredCourses = courses.filter(course =>
-            course.code.startsWith(filter)
-        );
+        filtered = courses.filter(course => course.code.startsWith(filter));
     }
 
-    // Calculate total credits and count
-    const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
-    totalCreditsElement.textContent = totalCredits;
-    courseCountElement.textContent = filteredCourses.length;
+    // Calculate total credits using reduce
+    const totalCredits = filtered.reduce((sum, course) => sum + course.credits, 0);
+    document.getElementById('totalCredits').textContent = totalCredits;
+    document.getElementById('courseCount').textContent = filtered.length;
 
-    // Create course cards
-    filteredCourses.forEach(course => {
+    // Create cards
+    container.innerHTML = '';
+    filtered.forEach(course => {
         const card = document.createElement('div');
         card.className = `course-card ${course.completed ? 'completed' : ''}`;
-
-        const checkmark = course.completed ? '✓ ' : '';
+        const check = course.completed ? '✓ ' : '';
 
         card.innerHTML = `
-            <h3>${checkmark}${course.code}</h3>
+            <h3>${check}${course.code}</h3>
             <p>${course.name}</p>
-            <p class="credits">Credits: ${course.credits}</p>
-            <p class="status">${course.completed ? 'Completed' : 'In Progress'}</p>
+            <p>Credits: ${course.credits}</p>
+            <span class="course-status">${course.completed ? 'Completed' : 'In Progress'}</span>
         `;
 
-        courseCardsContainer.appendChild(card);
+        container.appendChild(card);
     });
 }
 
-// Filter button event listeners
-filterButtons.forEach(button => {
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(button => {
     button.addEventListener('click', () => {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
-        currentFilter = button.getAttribute('data-filter');
-        displayCourses(currentFilter);
+        displayCourses(button.dataset.filter);
     });
 });
 
-// Initial display
+// Initial load
 displayCourses();

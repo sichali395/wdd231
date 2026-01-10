@@ -1,17 +1,13 @@
 /* Media query for larger screens */
 @media (min-width: 768px) {
-
-    /* Hide hamburger */
     .hamburger {
         display: none;
     }
 
-    /* Navigation */
     .nav-menu {
         display: flex !important;
         flex-direction: row;
         justify-content: center;
-        padding: 0 2rem;
     }
 
     .nav-menu li {
@@ -21,30 +17,10 @@
     .nav-menu a {
         border-bottom: none;
         padding: 1rem 2rem;
-        position: relative;
     }
 
-    .nav-menu a::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 3px;
-        background-color: var(--secondary);
-        transition: width 0.3s, left 0.3s;
-    }
-
-    .nav-menu a:hover::after,
-    .nav-menu a.active::after {
-        width: 80%;
-        left: 10%;
-    }
-
-    /* About section */
     .about-content {
         flex-direction: row;
-        align-items: flex-start;
     }
 
     .about-text {
@@ -56,19 +32,20 @@
         flex: 1;
     }
 
-    /* Courses */
     .course-cards {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Contact section */
-    .contact-content {
+    .projects-content {
         flex-direction: row;
     }
 
-    .contact-details,
-    .learning-goals {
+    .project-item {
         flex: 1;
+    }
+
+    .social-links {
+        gap: 2rem;
     }
 }
 
@@ -77,19 +54,7 @@
         padding: 0 2rem;
     }
 
-    .header-content {
-        padding: 0 1rem;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-    }
-
     .course-cards {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    .social-links {
-        gap: 2rem;
     }
 }

@@ -1,19 +1,20 @@
-/* Base styles for mobile/small screens */
+/* Base styles with simplified color palette */
 :root {
     --primary: #2E8B57;
-    --secondary: #FF6B35;
-    --accent: #4A90E2;
+    /* Main green color */
+    --secondary: #4682B4;
+    /* Steel blue for accents */
     --light: #F8F9FA;
-    --dark: #2C3E50;
-    --text: #333333;
-    --completed: #27AE60;
-    --incomplete: #95A5A6;
-    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --radius: 8px;
-    --border: 1px solid #E9ECEF;
+    /* Light background */
+    --dark: #333333;
+    /* Dark text */
+    --border: #DDDDDD;
+    /* Borders */
+    --shadow: rgba(0, 0, 0, 0.1);
+    /* Shadow color */
 }
 
-/* Reset and base styles */
+/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -23,7 +24,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: var(--text);
+    color: var(--dark);
     background-color: var(--light);
     max-width: 1200px;
     margin: 0 auto;
@@ -35,15 +36,12 @@ header {
     background-color: var(--primary);
     color: white;
     padding: 1rem;
-    box-shadow: var(--shadow);
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .student-name {
@@ -55,7 +53,7 @@ header {
 
 /* Navigation */
 nav {
-    background-color: var(--dark);
+    background-color: var(--secondary);
 }
 
 .nav-menu {
@@ -80,8 +78,7 @@ nav {
     color: white;
     text-decoration: none;
     text-align: center;
-    transition: background-color 0.3s;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .nav-menu a:hover,
@@ -89,7 +86,7 @@ nav {
     background-color: var(--primary);
 }
 
-/* Hamburger Menu */
+/* Hamburger */
 .hamburger {
     background: none;
     border: none;
@@ -104,46 +101,45 @@ nav {
     width: 25px;
     height: 3px;
     background-color: white;
-    transition: transform 0.3s;
 }
 
-/* Main Content */
+/* Main */
 main {
     padding: 1rem 0;
 }
 
 h1 {
-    color: var(--dark);
-    margin-bottom: 2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--secondary);
 }
 
 h2 {
     color: var(--primary);
-    margin: 1.5rem 0 1rem;
+    margin-bottom: 1rem;
 }
 
 h3 {
-    color: var(--dark);
-    margin: 1.2rem 0 0.5rem;
+    color: var(--secondary);
+    margin: 1rem 0 0.5rem;
 }
 
 /* Sections */
 section {
     background-color: white;
     padding: 1.5rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 2rem;
-    border: var(--border);
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow);
+    border: 1px solid var(--border);
 }
 
-/* About Me Section */
+/* About Section */
 .about-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .about-text p {
@@ -163,12 +159,11 @@ section {
 }
 
 .skill-tag {
-    background-color: var(--accent);
+    background-color: var(--secondary);
     color: white;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.85rem;
-    font-weight: 500;
 }
 
 /* Student Photo */
@@ -177,10 +172,7 @@ section {
 }
 
 .photo-frame {
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
     padding: 0.5rem;
-    border-radius: var(--radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
 }
 
@@ -188,30 +180,20 @@ section {
     width: 100%;
     max-width: 280px;
     height: auto;
-    border-radius: calc(var(--radius) - 2px);
+    border-radius: 8px;
+    border: 2px solid var(--primary);
 }
 
-.photo-info h3 {
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-}
-
-.role {
-    color: var(--secondary);
+.photo-caption {
     font-weight: 600;
-}
-
-.location {
-    color: #666;
-    font-size: 0.9rem;
+    color: var(--primary);
+    line-height: 1.4;
 }
 
 /* Courses Section */
 .section-subtitle {
     color: #666;
-    font-size: 1rem;
-    margin-top: -0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .filter-buttons {
@@ -227,13 +209,8 @@ section {
     background: white;
     color: var(--primary);
     cursor: pointer;
-    border-radius: var(--radius);
+    border-radius: 6px;
     font-weight: 600;
-    transition: all 0.3s;
-}
-
-.filter-btn:hover {
-    background-color: var(--light);
 }
 
 .filter-btn.active {
@@ -250,35 +227,20 @@ section {
 }
 
 .course-card {
-    border: 2px solid #ddd;
-    padding: 1.2rem;
-    border-radius: var(--radius);
+    border: 2px solid var(--border);
+    padding: 1rem;
+    border-radius: 6px;
     background-color: white;
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.course-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .course-card.completed {
-    border-color: var(--completed);
-    background: linear-gradient(135deg, #f8fff8 0%, #ffffff 100%);
-}
-
-.course-card:not(.completed) {
-    border-color: var(--incomplete);
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-color: var(--primary);
+    background-color: #F0FFF0;
 }
 
 .course-card h3 {
     color: var(--dark);
     margin-bottom: 0.5rem;
-    font-size: 1.1rem;
 }
 
 .course-card p {
@@ -286,55 +248,36 @@ section {
     font-size: 0.9rem;
 }
 
-.credits {
-    color: var(--primary);
-    font-weight: 600;
-}
-
 .status {
-    font-weight: 600;
-    margin-top: 0.5rem;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
     display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
     font-size: 0.85rem;
+    font-weight: 500;
 }
 
 .course-card.completed .status {
-    background-color: rgba(39, 174, 96, 0.15);
-    color: var(--completed);
+    background-color: rgba(46, 139, 87, 0.1);
+    color: var(--primary);
 }
 
 .course-card:not(.completed) .status {
-    background-color: rgba(149, 165, 166, 0.15);
-    color: var(--incomplete);
+    background-color: rgba(221, 221, 221, 0.5);
+    color: #666;
 }
 
 /* Course Summary */
 .course-summary {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 2px solid #eee;
-}
-
-.credit-total {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--dark);
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
 }
 
 .credit-count {
     color: var(--primary);
-    font-size: 1.3rem;
-}
-
-.course-count {
-    color: #666;
-    font-size: 0.95rem;
+    font-weight: 600;
 }
 
 .count-number {
@@ -342,50 +285,20 @@ section {
     font-weight: 600;
 }
 
-/* Contact Info Section */
-.contact-content {
+/* Projects Section */
+.projects-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
-.contact-details p {
-    margin-bottom: 1.5rem;
-}
-
-.contact-items {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border-radius: var(--radius);
-    border-left: 4px solid var(--primary);
-}
-
-.contact-icon {
-    font-size: 1.5rem;
-}
-
-.contact-item strong {
-    display: block;
-    color: var(--primary);
-    margin-bottom: 0.25rem;
-}
-
-.learning-goals ul {
+.project-item ul {
     margin-left: 1.5rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
-.learning-goals li {
-    margin-bottom: 0.75rem;
+.project-item li {
+    margin-bottom: 0.5rem;
     padding-left: 0.5rem;
 }
 
@@ -394,7 +307,7 @@ footer {
     text-align: center;
     padding: 2rem 0;
     margin-top: 2rem;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--border);
     color: var(--dark);
 }
 
@@ -402,17 +315,16 @@ footer {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .social-links a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--dark);
+    color: var(--secondary);
     text-decoration: none;
-    transition: color 0.3s;
-    gap: 0.5rem;
+    gap: 0.25rem;
 }
 
 .social-links a:hover {

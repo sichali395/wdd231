@@ -1,7 +1,7 @@
 [
     {
-        "name": "Karonga Rice Farmers",
-        "address": "Chilumba Road, Karonga",
+        "name": "Karonga Rice Farmers Cooperative",
+        "address": "Chilumba Road, Karonga District",
         "phone": "+265 882 123 456",
         "email": "info@karongarice.mw",
         "website": "karongarice.mw",
@@ -10,18 +10,18 @@
         "category": "Agriculture"
     },
     {
-        "name": "Karonga Business Conference",
+        "name": "Karonga Business Conference Center",
         "address": "Town Centre, Karonga",
         "phone": "+265 999 234 567",
         "email": "events@karongaconference.mw",
         "website": "karongaconference.mw",
         "image": "business-conference.jpg",
         "membershipLevel": 2,
-        "category": "Events"
+        "category": "Events & Hospitality"
     },
     {
-        "name": "Mwahimba Textiles",
-        "address": "Market Street, Karonga",
+        "name": "Mwahimba Textiles & Fabrics",
+        "address": "Market Street, Karonga Town Centre",
         "phone": "+265 887 345 678",
         "email": "sales@mwahimba.mw",
         "website": "mwahimba.mw",
@@ -31,7 +31,7 @@
     },
     {
         "name": "Karonga Cotton Farm",
-        "address": "Rural Area, Karonga",
+        "address": "Rural Area, Karonga District",
         "phone": "+265 881 456 789",
         "email": "info@karongacotton.mw",
         "website": "karongacotton.mw",
@@ -41,17 +41,17 @@
     },
     {
         "name": "Mbaragha Business Centre",
-        "address": "M1 Road, Mbaragha",
+        "address": "M1 Road, Mbaragha, Karonga",
         "phone": "+265 888 567 890",
         "email": "info@mbaraghacentre.mw",
         "website": "mbaraghacentre.mw",
         "image": "mbaragha.jpg",
         "membershipLevel": 3,
-        "category": "Retail"
+        "category": "Retail & Services"
     },
     {
-        "name": "Kayelekera Mining",
-        "address": "Kayelekera Road, Karonga",
+        "name": "Kayelekera Mining Services",
+        "address": "Kayelekera Road, Karonga District",
         "phone": "+265 992 678 901",
         "email": "services@kayelekeramining.mw",
         "website": "kayelekeramining.mw",

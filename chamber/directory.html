@@ -4,26 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karonga Chamber of Commerce - Directory</title>
-    <meta name="description" content="Business directory for Karonga Chamber of Commerce">
+    <title>Karonga Chamber of Commerce - Business Directory</title>
+    <meta name="description"
+        content="Browse local businesses in Karonga, Malawi. Find contact information, websites, and membership levels of chamber members.">
     <meta name="author" content="Laston James Sichali">
 
-    <!-- Google Fonts with preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap"
-        rel="stylesheet">
-
     <!-- Open Graph / Facebook Meta Tags -->
-    <meta property="og:title" content="Karonga Chamber of Commerce - Directory">
-    <meta property="og:description" content="Business directory for Karonga Chamber of Commerce">
-    <meta property="og:image" content="https://sichali395.github.io/wdd231/chamber/directory-social.jpg">
-    <meta property="og:url" content="https://sichali395.github.io/wdd231/chamber/directory.html">
+    <meta property="og:title" content="Karonga Chamber of Commerce - Business Directory">
+    <meta property="og:description"
+        content="Browse local businesses in Karonga, Malawi. Find contact information, websites, and membership levels of chamber members.">
+    <meta property="og:image" content="https://yourdomain.com/chamber/images/business-conference.jpg">
+    <meta property="og:url" content="https://yourdomain.com/chamber/directory.html">
     <meta property="og:type" content="website">
 
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles/base.css" as="style">
+    <link rel="preload" href="scripts/main.js" as="script">
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="styles/normalize.css">
@@ -36,37 +35,48 @@
 </head>
 
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <header>
         <div class="header-content">
             <div class="logo">
-                <h1>Karonga</h1>
-                <p>Chamber of Commerce</p>
+                <h1>Karonga Chamber of Commerce</h1>
             </div>
-            <nav>
-                <button class="menu-toggle" id="menu-toggle">☰</button>
+            <nav aria-label="Main navigation">
+                <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="sr-only">Menu</span>
+                    <span aria-hidden="true">☰</span>
+                </button>
                 <ul class="nav-menu" id="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="discover.html">Discover</a></li>
-                    <li class="active"><a href="directory.html">Directory</a></li>
+                    <li class="active" aria-current="page"><a href="directory.html">Directory</a></li>
                     <li><a href="join.html">Join</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <h2>Business Directory</h2>
+    <main id="main-content">
+        <h1>Business Directory</h1>
 
-        <div class="view-toggle">
-            <button id="grid-view" class="active">Grid View</button>
-            <button id="list-view">List View</button>
+        <div class="view-toggle" role="region" aria-label="View options">
+            <button id="grid-view" class="active" aria-pressed="true">
+                <span class="view-icon" aria-hidden="true">▦</span> Grid View
+            </button>
+            <button id="list-view" aria-pressed="false">
+                <span class="view-icon" aria-hidden="true">☰</span> List View
+            </button>
         </div>
 
         <div class="directory-container">
-            <div id="grid-container" class="grid-view">
+            <div id="grid-container" class="grid-view" role="region" aria-label="Business directory in grid view">
                 <!-- Grid view cards loaded by JavaScript -->
+                <div class="loading" role="alert" aria-live="polite">Loading business directory...</div>
             </div>
-            <div id="list-container" class="list-view hidden">
+            <div id="list-container" class="list-view hidden" role="region"
+                aria-label="Business directory in list view">
                 <!-- List view loaded by JavaScript -->
             </div>
         </div>
@@ -75,17 +85,26 @@
     <footer>
         <div class="footer-content">
             <div class="contact-info">
-                <h3>Karonga Chamber of Commerce</h3>
-                <p>Mzumara Street, Town Centre</p>
-                <p>Karonga, Malawi</p>
-                <p>info@karongachamber.mw</p>
-                <p>+265 (0) 1 362 1234</p>
+                <h2>Karonga Chamber of Commerce</h2>
+                <address>
+                    <p>Mzumara Street, Town Centre<br>
+                        Karonga, Malawi</p>
+                    <p>Email: <a href="mailto:info@karongachamber.mw">info@karongachamber.mw</a></p>
+                    <p>Phone: <a href="tel:+26513621234">+265 (0) 1 362 1234</a></p>
+                </address>
             </div>
 
             <div class="social-media">
-                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                <h3 class="sr-only">Social Media</h3>
+                <a href="https://facebook.com" aria-label="Facebook">
+                    <img src="assets/icons/facebook.svg" alt="" width="24" height="24">
+                </a>
+                <a href="https://twitter.com" aria-label="Twitter">
+                    <img src="assets/icons/twitter.svg" alt="" width="24" height="24">
+                </a>
+                <a href="https://instagram.com" aria-label="Instagram">
+                    <img src="assets/icons/instagram.svg" alt="" width="24" height="24">
+                </a>
             </div>
 
             <div class="developer-info">
@@ -93,6 +112,7 @@
                 <p><strong>Laston James Sichali</strong></p>
                 <p>© <span id="current-year"></span> Karonga Chamber of Commerce</p>
                 <p>Last Modification: <span id="last-modified"></span></p>
+                <p><a href="attributions.html">Attributions</a></p>
             </div>
         </div>
     </footer>

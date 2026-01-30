@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Karonga Chamber of Commerce</title>
+    <meta name="description"
+        content="Join the Karonga Chamber of Commerce to grow your business and connect with the local community in Malawi.">
+    <meta name="author" content="Laston James Sichali">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:title" content="Join - Karonga Chamber of Commerce">
+    <meta property="og:description"
+        content="Join the Karonga Chamber of Commerce to grow your business and connect with the local community in Malawi.">
+    <meta property="og:image" content="https://yourdomain.com/chamber/images/business-conference.jpg">
+    <meta property="og:url" content="https://yourdomain.com/chamber/join.html">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles/base.css" as="style">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+</head>
+
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Karonga Chamber of Commerce</h1>
+            </div>
+            <nav aria-label="Main navigation">
+                <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="sr-only">Menu</span>
+                    <span aria-hidden="true">☰</span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li class="active" aria-current="page"><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <h1>Join Our Chamber</h1>
+        <p class="page-intro">Become a member of the Karonga Chamber of Commerce and connect with local businesses,
+            access resources, and grow your enterprise in Malawi's northern region.</p>
+
+        <div class="join-container">
+            <!-- Application Form -->
+            <div class="form-section">
+                <h2>Membership Application</h2>
+                <form id="membership-form" method="get" action="thankyou.html" novalidate>
+                    <!-- Personal Information -->
+                    <fieldset>
+                        <legend>Personal Information</legend>
+
+                        <div class="form-group">
+                            <label for="first-name">
+                                First Name *
+                                <input type="text" id="first-name" name="first-name" title="Enter your first name"
+                                    autocomplete="given-name" required minlength="2" maxlength="50">
+                                <span class="error-message"></span>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last-name">
+                                Last Name *
+                                <input type="text" id="last-name" name="last-name" title="Enter your last name"
+                                    autocomplete="family-name" required minlength="2" maxlength="50">
+                                <span class="error-message"></span>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="title">
+                                Organizational Title
+                                <input type="text" id="title" name="title"
+                                    title="Enter your organizational title (minimum 7 characters, only letters, hyphens and spaces)"
+                                    autocomplete="organization-title" pattern="^[A-Za-z\s\-]{7,}$"
+                                    placeholder="e.g., Marketing Director">
+                                <span class="hint">Minimum 7 characters, only letters, hyphens and spaces</span>
+                                <span class="error-message"></span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Contact Information -->
+                    <fieldset>
+                        <legend>Contact Information</legend>
+
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address *
+                                <input type="email" id="email" name="email" title="Enter your email address"
+                                    autocomplete="email" required placeholder="name@example.com">
+                                <span class="error-message"></span>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">
+                                Mobile Phone *
+                                <input type="tel" id="phone" name="phone" title="Enter your mobile phone number"
+                                    autocomplete="tel" required placeholder="+265 XXX XXX XXX">
+                                <span class="error-message"></span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Business Information -->
+                    <fieldset>
+                        <legend>Business Information</legend>
+
+                        <div class="form-group">
+                            <label for="business-name">
+                                Business/Organization Name *
+                                <input type="text" id="business-name" name="business-name"
+                                    title="Enter your business or organization name" autocomplete="organization"
+                                    required minlength="2" maxlength="100">
+                                <span class="error-message"></span>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="membership-level">
+                                Membership Level *
+                                <select id="membership-level" name="membership-level" title="Select a membership level"
+                                    required>
+                                    <option value="" disabled selected>Select a level...</option>
+                                    <option value="np">NP Membership (Non-Profit)</option>
+                                    <option value="bronze">Bronze Membership</option>
+                                    <option value="silver">Silver Membership</option>
+                                    <option value="gold">Gold Membership</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">
+                                Business Description
+                                <textarea id="description" name="description"
+                                    title="Describe your business or organization" rows="4" maxlength="500"></textarea>
+                                <span class="hint">Maximum 500 characters</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Hidden timestamp field -->
+                    <input type="hidden" id="timestamp" name="timestamp">
+
+                    <!-- Submit button -->
+                    <div class="form-group submit-group">
+                        <button type="submit" class="submit-btn">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Membership Cards -->
+            <div class="cards-section">
+                <h2>Membership Levels</h2>
+                <div class="membership-cards">
+                    <!-- NP Membership Card -->
+                    <div class="membership-card np-card" data-level="np">
+                        <div class="card-header">
+                            <h3>NP Membership</h3>
+                            <span class="price">No Fee</span>
+                        </div>
+                        <div class="card-body">
+                            <p>For non-profit organizations</p>
+                            <ul>
+                                <li>Basic directory listing</li>
+                                <li>Monthly newsletter</li>
+                                <li>Community events access</li>
+                            </ul>
+                            <button class="details-btn" data-modal="np-modal">View Benefits</button>
+                        </div>
+                    </div>
+
+                    <!-- Bronze Membership Card -->
+                    <div class="membership-card bronze-card" data-level="bronze">
+                        <div class="card-header">
+                            <h3>Bronze</h3>
+                            <span class="price">MWK 15,000/yr</span>
+                        </div>
+                        <div class="card-body">
+                            <p>For small businesses</p>
+                            <ul>
+                                <li>Enhanced directory listing</li>
+                                <li>Business workshops</li>
+                                <li>Networking events</li>
+                            </ul>
+                            <button class="details-btn" data-modal="bronze-modal">View Benefits</button>
+                        </div>
+                    </div>
+
+                    <!-- Silver Membership Card -->
+                    <div class="membership-card silver-card" data-level="silver">
+                        <div class="card-header">
+                            <h3>Silver</h3>
+                            <span class="price">MWK 30,000/yr</span>
+                        </div>
+                        <div class="card-body">
+                            <p>For growing businesses</p>
+                            <ul>
+                                <li>Featured directory listing</li>
+                                <li>Training programs</li>
+                                <li>Event discounts</li>
+                            </ul>
+                            <button class="details-btn" data-modal="silver-modal">View Benefits</button>
+                        </div>
+                    </div>
+
+                    <!-- Gold Membership Card -->
+                    <div class="membership-card gold-card" data-level="gold">
+                        <div class="card-header">
+                            <h3>Gold</h3>
+                            <span class="price">MWK 50,000/yr</span>
+                        </div>
+                        <div class="card-body">
+                            <p>For established businesses</p>
+                            <ul>
+                                <li>Premium directory listing</li>
+                                <li>Home page spotlight</li>
+                                <li>Priority event access</li>
+                            </ul>
+                            <button class="details-btn" data-modal="gold-modal">View Benefits</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modals for membership benefits -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <!-- NP Membership Modal -->
+    <div class="modal" id="np-modal" role="dialog" aria-labelledby="np-modal-title" aria-modal="true" hidden>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <h2 id="np-modal-title">NP Membership Benefits</h2>
+            <div class="modal-body">
+                <h3>Perfect for Non-Profit Organizations</h3>
+                <ul>
+                    <li><strong>Basic Directory Listing:</strong> Your organization appears in our business directory
+                    </li>
+                    <li><strong>Monthly Newsletter:</strong> Receive updates on community initiatives and events</li>
+                    <li><strong>Community Events:</strong> Access to chamber-organized community service events</li>
+                    <li><strong>Resource Library:</strong> Access to non-profit management resources</li>
+                    <li><strong>Volunteer Network:</strong> Connect with local volunteers and supporters</li>
+                    <li><strong>Grant Information:</strong> Receive updates on available grants and funding</li>
+                    <li><strong>Community Partnerships:</strong> Opportunities to partner with local businesses</li>
+                </ul>
+                <p class="modal-footer">No membership fee required for registered non-profit organizations.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bronze Membership Modal -->
+    <div class="modal" id="bronze-modal" role="dialog" aria-labelledby="bronze-modal-title" aria-modal="true" hidden>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <h2 id="bronze-modal-title">Bronze Membership Benefits</h2>
+            <div class="modal-body">
+                <h3>Ideal for Small Businesses & Startups</h3>
+                <ul>
+                    <li><strong>Enhanced Directory Listing:</strong> Featured in our business directory with contact
+                        details</li>
+                    <li><strong>Business Workshops:</strong> Free access to quarterly business workshops</li>
+                    <li><strong>Networking Events:</strong> Invitations to monthly networking mixers</li>
+                    <li><strong>Business Resources:</strong> Access to templates and business planning tools</li>
+                    <li><strong>Social Media Promotion:</strong> Monthly feature on our social media channels</li>
+                    <li><strong>Member Discounts:</strong> 10% discount on chamber events and programs</li>
+                    <li><strong>Business Advisory:</strong> Access to basic business advisory services</li>
+                </ul>
+                <p class="modal-footer">Annual Fee: MWK 15,000</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Silver Membership Modal -->
+    <div class="modal" id="silver-modal" role="dialog" aria-labelledby="silver-modal-title" aria-modal="true" hidden>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <h2 id="silver-modal-title">Silver Membership Benefits</h2>
+            <div class="modal-body">
+                <h3>For Growing & Established Businesses</h3>
+                <ul>
+                    <li><strong>Featured Directory Listing:</strong> Premium placement in our business directory</li>
+                    <li><strong>Training Programs:</strong> Access to specialized training and development programs</li>
+                    <li><strong>Event Discounts:</strong> 25% discount on all chamber events and conferences</li>
+                    <li><strong>Business Matchmaking:</strong> Introductions to potential clients and partners</li>
+                    <li><strong>Marketing Support:</strong> Quarterly feature in chamber newsletter</li>
+                    <li><strong>Priority Registration:</strong> Early access to popular events and workshops</li>
+                    <li><strong>Legal & Compliance Updates:</strong> Regular updates on regulatory changes</li>
+                    <li><strong>Export Assistance:</strong> Support for businesses looking to export</li>
+                </ul>
+                <p class="modal-footer">Annual Fee: MWK 30,000</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gold Membership Modal -->
+    <div class="modal" id="gold-modal" role="dialog" aria-labelledby="gold-modal-title" aria-modal="true" hidden>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <h2 id="gold-modal-title">Gold Membership Benefits</h2>
+            <div class="modal-body">
+                <h3>Premium Benefits for Leading Businesses</h3>
+                <ul>
+                    <li><strong>Premium Directory Listing:</strong> Top placement with logo and extended description
+                    </li>
+                    <li><strong>Home Page Spotlight:</strong> Featured position on chamber homepage (rotating)</li>
+                    <li><strong>Priority Event Access:</strong> VIP access to all chamber events and conferences</li>
+                    <li><strong>Executive Networking:</strong> Exclusive events with business leaders and policymakers
+                    </li>
+                    <li><strong>Media Exposure:</strong> Featured in chamber press releases and media coverage</li>
+                    <li><strong>Sponsorship Opportunities:</strong> Priority sponsorship for major events</li>
+                    <li><strong>Strategic Advisory:</strong> Access to chamber leadership and strategic planning
+                        sessions</li>
+                    <li><strong>International Connections:</strong> Introductions to international business partners
+                    </li>
+                    <li><strong>Customized Support:</strong> Tailored business development assistance</li>
+                    <li><strong>Complimentary Event Passes:</strong> 5 free passes to major chamber events annually</li>
+                </ul>
+                <p class="modal-footer">Annual Fee: MWK 50,000</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h2>Karonga Chamber of Commerce</h2>
+                <address>
+                    <p>Mzumara Street, Town Centre<br>
+                        Karonga, Malawi</p>
+                    <p>Email: <a href="mailto:info@karongachamber.mw">info@karongachamber.mw</a></p>
+                    <p>Phone: <a href="tel:+26513621234">+265 (0) 1 362 1234</a></p>
+                </address>
+            </div>
+
+            <div class="social-media">
+                <h3 class="sr-only">Social Media</h3>
+                <a href="https://facebook.com" aria-label="Facebook">
+                    <img src="assets/icons/facebook.svg" alt="" width="24" height="24">
+                </a>
+                <a href="https://twitter.com" aria-label="Twitter">
+                    <img src="assets/icons/twitter.svg" alt="" width="24" height="24">
+                </a>
+                <a href="https://instagram.com" aria-label="Instagram">
+                    <img src="assets/icons/instagram.svg" alt="" width="24" height="24">
+                </a>
+            </div>
+
+            <div class="developer-info">
+                <p>WDD231 Class Project</p>
+                <p><strong>Laston James Sichali</strong></p>
+                <p>© <span id="current-year"></span> Karonga Chamber of Commerce</p>
+                <p>Last Modification: <span id="last-modified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

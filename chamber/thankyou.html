@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Karonga Chamber of Commerce</title>
+    <meta name="description"
+        content="Thank you for joining the Karonga Chamber of Commerce. Welcome to our business community.">
+    <meta name="author" content="Laston James Sichali">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
+</head>
+
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Karonga Chamber of Commerce</h1>
+            </div>
+            <nav aria-label="Main navigation">
+                <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="sr-only">Menu</span>
+                    <span aria-hidden="true">☰</span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="thankyou-container">
+            <div class="thankyou-header">
+                <h1>Thank You for Joining!</h1>
+                <div class="success-icon">✓</div>
+                <p class="thankyou-message">Your application has been received successfully. Welcome to the Karonga
+                    Chamber of Commerce community!</p>
+            </div>
+
+            <div class="application-summary">
+                <h2>Application Summary</h2>
+                <div class="summary-card">
+                    <dl class="summary-list">
+                        <div class="summary-item">
+                            <dt>First Name:</dt>
+                            <dd id="summary-first-name">Loading...</dd>
+                        </div>
+                        <div class="summary-item">
+                            <dt>Last Name:</dt>
+                            <dd id="summary-last-name">Loading...</dd>
+                        </div>
+                        <div class="summary-item">
+                            <dt>Email Address:</dt>
+                            <dd id="summary-email">Loading...</dd>
+                        </div>
+                        <div class="summary-item">
+                            <dt>Phone Number:</dt>
+                            <dd id="summary-phone">Loading...</dd>
+                        </div>
+                        <div class="summary-item">
+                            <dt>Business Name:</dt>
+                            <dd id="summary-business">Loading...</dd>
+                        </div>
+                        <div class="summary-item">
+                            <dt>Membership Level:</dt>
+                            <dd id="summary-membership">Loading...</dd>
+                        </div>
+                        <div class="summary-item">
+                            <dt>Application Date:</dt>
+                            <dd id="summary-date">Loading...</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="next-steps">
+                    <h3>What Happens Next?</h3>
+                    <ol class="steps-list">
+                        <li><strong>Application Review:</strong> Our team will review your application within 2 business
+                            days.</li>
+                        <li><strong>Welcome Email:</strong> You will receive a welcome email with your membership
+                            details.</li>
+                        <li><strong>Member Portal Access:</strong> Login credentials for the member portal will be
+                            provided.</li>
+                        <li><strong>Welcome Package:</strong> Your welcome package will be sent via email.</li>
+                        <li><strong>Business Listing:</strong> Your business will be added to our directory within 48
+                            hours.</li>
+                    </ol>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="directory.html" class="action-btn primary-btn">Browse Directory</a>
+                    <a href="index.html" class="action-btn secondary-btn">Return Home</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h2>Karonga Chamber of Commerce</h2>
+                <address>
+                    <p>Mzumara Street, Town Centre<br>
+                        Karonga, Malawi</p>
+                    <p>Email: <a href="mailto:info@karongachamber.mw">info@karongachamber.mw</a></p>
+                    <p>Phone: <a href="tel:+26513621234">+265 (0) 1 362 1234</a></p>
+                </address>
+            </div>
+
+            <div class="social-media">
+                <h3 class="sr-only">Social Media</h3>
+                <a href="https://facebook.com" aria-label="Facebook">
+                    <img src="assets/icons/facebook.svg" alt="" width="24" height="24">
+                </a>
+                <a href="https://twitter.com" aria-label="Twitter">
+                    <img src="assets/icons/twitter.svg" alt="" width="24" height="24">
+                </a>
+                <a href="https://instagram.com" aria-label="Instagram">
+                    <img src="assets/icons/instagram.svg" alt="" width="24" height="24">
+                </a>
+            </div>
+
+            <div class="developer-info">
+                <p>WDD231 Class Project</p>
+                <p><strong>Laston James Sichali</strong></p>
+                <p>© <span id="current-year"></span> Karonga Chamber of Commerce</p>
+                <p>Last Modification: <span id="last-modified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

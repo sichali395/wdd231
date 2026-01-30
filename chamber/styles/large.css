@@ -132,3 +132,51 @@
         border-top: 2px solid #000;
     }
 }
+
+/* Join Page Large Screens */
+@media (min-width: 768px) {
+    .join-container {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .form-section {
+        flex: 2;
+    }
+
+    .cards-section {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .membership-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .form-group label {
+        margin-bottom: 0;
+        text-align: right;
+    }
+
+    .submit-group {
+        grid-column: 2;
+        text-align: left;
+    }
+}
+
+@media (min-width: 1024px) {
+    .join-container {
+        gap: 4rem;
+    }
+
+    .modal {
+        width: 700px;
+    }
+}

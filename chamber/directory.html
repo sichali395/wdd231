@@ -23,6 +23,9 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="styles/base.css" as="style">
     <link rel="preload" href="scripts/main.js" as="script">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="styles/normalize.css">
@@ -41,7 +44,9 @@
     <header>
         <div class="header-content">
             <div class="logo">
-                <h1>Karonga Chamber of Commerce</h1>
+                <a href="index.html">
+                    <span class="logo-text">Karonga Chamber of Commerce</span>
+                </a>
             </div>
             <nav aria-label="Main navigation">
                 <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu">

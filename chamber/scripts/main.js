@@ -1,100 +1,51 @@
-// scripts/main.js - Common functionality
+// scripts/main.js - Main site functionality
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Set current year
-    const currentYear = document.getElementById('current-year');
-    if (currentYear) {
-        currentYear.textContent = new Date().getFullYear();
-    }
-
-    // Set last modified date
-    const lastModified = document.getElementById('last-modified');
-    if (lastModified) {
-        lastModified.textContent = document.lastModified;
-    }
-
-    // Mobile menu functionality - FIXED
+    // Navigation menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
 
     if (menuToggle && navMenu) {
-        // Create overlay for mobile menu
-        const overlay = document.createElement('div');
-        overlay.className = 'nav-overlay';
-        document.body.appendChild(overlay);
-
-        // Toggle menu function
-        function toggleMenu() {
+        menuToggle.addEventListener('click', function () {
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
             menuToggle.setAttribute('aria-expanded', !isExpanded);
             navMenu.classList.toggle('active');
-            overlay.classList.toggle('active');
-            document.body.style.overflow = !isExpanded ? 'hidden' : '';
-        }
-
-        // Menu toggle click
-        menuToggle.addEventListener('click', toggleMenu);
-
-        // Overlay click to close
-        overlay.addEventListener('click', toggleMenu);
-
-        // Close menu when pressing Escape key
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
-                toggleMenu();
-            }
         });
 
-        // Close menu when clicking a link
-        const navLinks = navMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                if (window.innerWidth < 768) {
-                    toggleMenu();
-                }
-            });
-        });
-
-        // Close menu on window resize to desktop
-        function handleResize() {
-            if (window.innerWidth >= 768) {
+        // Close menu when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!menuToggle.contains(event.target) && !navMenu.contains(event.target)) {
                 menuToggle.setAttribute('aria-expanded', 'false');
                 navMenu.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
             }
-        }
-
-        // Debounced resize handler
-        let resizeTimer;
-        window.addEventListener('resize', function () {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(handleResize, 250);
         });
     }
 
-    // Add loading="lazy" to images for performance
-    document.addEventListener('DOMContentLoaded', function () {
-        const images = document.querySelectorAll('img:not([loading])');
-        images.forEach(img => {
-            img.setAttribute('loading', 'lazy');
-        });
-    });
-
-    // Performance: Preload critical images
-    function preloadImage(url) {
-        const img = new Image();
-        img.src = url;
+    // Update copyright year
+    const currentYearElement = document.getElementById('current-year');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
     }
 
-    // Preload important images if needed
-    const criticalImages = [
-        'images/business-conference.jpg',
-        'images/logo.jpg'
-    ];
+    // Update last modified date
+    const lastModifiedElement = document.getElementById('last-modified');
+    if (lastModifiedElement) {
+        lastModifiedElement.textContent = document.lastModified;
+    }
 
-    // Only preload on good connections
-    if (navigator.connection && navigator.connection.saveData === false) {
-        criticalImages.forEach(preloadImage);
+    // Initialize skip link focus
+    const skipLink = document.querySelector('.skip-link');
+    if (skipLink) {
+        skipLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.setAttribute('tabindex', '-1');
+                target.focus();
+                setTimeout(() => {
+                    target.removeAttribute('tabindex');
+                }, 1000);
+            }
+        });
     }
 });

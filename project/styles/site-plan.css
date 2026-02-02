@@ -540,3 +540,26 @@ a:focus {
         font-size: 2rem;
     }
 }
+
+/* Additional styles for rubric alignment */
+.note {
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    background-color: rgba(212, 165, 90, 0.1);
+    border-left: 3px solid var(--secondary-color);
+    font-style: italic;
+}
+
+.validation-links {
+    margin-top: 1rem;
+}
+
+.validation-links a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.validation-links a:hover,
+.validation-links a:focus {
+    color: white;
+}

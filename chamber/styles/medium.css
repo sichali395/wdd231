@@ -1,0 +1,40 @@
+/* Medium screens (641px - 1024px) */
+
+@media (min-width: 641px) {
+
+    /* Discover Grid - Medium Layout */
+    .discover-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "card1 card1"
+            "card2 card3"
+            "card4 card5"
+            "card6 card7"
+            "card8 card8";
+        gap: 2rem;
+    }
+
+    /* Image hover effect for medium and larger screens */
+    .discover-card:hover .card-image {
+        transform: scale(1.05);
+    }
+
+    /* Info Grid */
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .info-card {
+        padding: 1.75rem;
+    }
+
+    /* Adjust card content spacing */
+    .card-content {
+        padding: 1.75rem;
+    }
+
+    .card-image {
+        height: 220px;
+    }
+}

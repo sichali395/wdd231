@@ -115,3 +115,54 @@
         width: 700px;
     }
 }
+
+/* Large screens (1025px and above) */
+
+@media (min-width: 1025px) {
+
+    /* Discover Grid - Large Layout with Grid Areas */
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "card1 card1 card2 card2"
+            "card3 card4 card5 card6"
+            "card7 card7 card8 card8";
+        gap: 2.5rem;
+    }
+
+    /* Individual card sizing for large layout */
+    .discover-card:nth-child(1),
+    .discover-card:nth-child(7) {
+        grid-column: span 2;
+    }
+
+    .card-image {
+        height: 250px;
+    }
+
+    /* Enhanced hover effect for desktop */
+    .discover-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .discover-card:hover .card-image {
+        transform: scale(1.1);
+        filter: brightness(1.1) contrast(1.05);
+    }
+
+    /* Info Grid */
+    .info-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem;
+    }
+
+    .info-card {
+        padding: 2rem;
+    }
+
+    /* Adjust main content padding */
+    main {
+        padding: 3rem 2rem;
+    }
+}

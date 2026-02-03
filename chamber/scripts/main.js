@@ -49,3 +49,38 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+// Add to existing main.js
+
+// Function to preload discover images on good connections
+function preloadDiscoverImages() {
+    if (window.location.pathname.includes('discover.html')) {
+        const discoverImages = [
+            'images/discover/lake-malawi.webp',
+            'images/discover/karonga-cultural-centre.webp',
+            'images/discover/mbande-hill.webp',
+            'images/discover/chilumba-port.webp',
+            'images/discover/kaporo-beach.webp',
+            'images/discover/karonga-market.webp',
+            'images/discover/livingstonia-mission.webp',
+            'images/discover/wovwe-rice.webp'
+        ];
+
+        // Only preload on good connections
+        if (navigator.connection && navigator.connection.saveData === false) {
+            discoverImages.forEach(url => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = url;
+                document.head.appendChild(link);
+            });
+        }
+    }
+}
+
+// Call in DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function () {
+    // ... existing code ...
+    preloadDiscoverImages();
+});

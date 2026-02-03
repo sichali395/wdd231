@@ -4,40 +4,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover Karonga - Chamber of Commerce</title>
-    <meta name="description" content="Discover Karonga, Malawi">
-    <meta name="author" content="Your Name">
-    <link rel="icon" href="images/favicon.ico">
+    <title>Discover - Karonga Chamber of Commerce</title>
+    <meta name="description"
+        content="Discover the beauty and attractions of Karonga, Malawi. Explore local landmarks, cultural sites, and natural wonders.">
+    <meta name="author" content="Laston James Sichali">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:title" content="Discover Karonga, Malawi">
+    <meta property="og:description"
+        content="Explore the beauty and attractions of Karonga, Malawi. Discover local landmarks, cultural sites, and natural wonders.">
+    <meta property="og:image" content="https://yourdomain.com/chamber/images/karonga-cultural-centre.webp">
+    <meta property="og:url" content="https://yourdomain.com/chamber/discover.html">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles/base.css" as="style">
+
+    <!-- CSS Files -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 641px)">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1025px)">
+
+    <!-- JavaScript -->
     <script src="scripts/main.js" defer></script>
-    <script src="scripts/discover.js" defer></script>
+    <script src="scripts/discover.js" type="module" defer></script>
+    <!-- In discover.html head section -->
+    <script src="data/discover.mjs" type="module" defer></script>
 </head>
 
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header>
         <div class="header-content">
             <div class="logo">
-                <a href="index.html">
-                    <span class="logo-text">Karonga Chamber of Commerce</span>
-                </a>
+                <h1>Karonga Chamber of Commerce</h1>
             </div>
-            <!-- ... navigation ... -->
+            <nav aria-label="Main navigation">
+                <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="sr-only">Menu</span>
+                    <span aria-hidden="true">☰</span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active" aria-current="page"><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <main>
-        <h2>Discover Karonga</h2>
-        <!-- Content will be added later -->
+    <main id="main-content">
+        <h1>Discover Karonga</h1>
+        <p class="page-intro">Explore the beauty, culture, and attractions of Karonga, Malawi. From historical sites to
+            natural wonders, discover what makes our region unique.</p>
+
+        <!-- Visitor Message -->
+        <div id="visitor-message" class="visitor-message" role="alert" aria-live="polite">
+            <p id="visitor-text">Welcome! Let us know if you have any questions.</p>
+            <button id="close-message" class="close-message" aria-label="Close welcome message">×</button>
+        </div>
+
+        <!-- Discover Grid -->
+        <div class="discover-container" id="discover-grid">
+            <!-- Cards will be loaded by JavaScript -->
+            <div class="loading" role="status" aria-live="polite">Loading Karonga attractions...</div>
+        </div>
+
+        <!-- About Karonga Section -->
+        <section class="karonga-info">
+            <h2>About Karonga</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>History</h3>
+                    <p>Karonga is a town in the Karonga District in Northern Region of Malawi. Located on the western
+                        shore of Lake Malawi, it was established as a British colonial post in the late 19th century.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>Culture</h3>
+                    <p>The town is home to various ethnic groups including the Tumbuka, Nkhonde, and Tonga people, each
+                        with their own unique traditions, dances, and cultural practices.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Economy</h3>
+                    <p>Karonga's economy is based on agriculture (rice, cotton, maize), fishing in Lake Malawi, and
+                        mining (uranium at Kayelekera Mine). Tourism is also growing.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Climate</h3>
+                    <p>Karonga has a tropical savanna climate with distinct wet (November-April) and dry (May-October)
+                        seasons. Temperatures average 25-30°C year-round.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <!-- Same footer as directory.html -->
+        <div class="footer-content">
+            <div class="contact-info">
+                <h2>Karonga Chamber of Commerce</h2>
+                <address>
+                    <p>Mzumara Street, Town Centre<br>
+                        Karonga, Malawi</p>
+                    <p>Email: <a href="mailto:info@karongachamber.mw">info@karongachamber.mw</a></p>
+                    <p>Phone: <a href="tel:+26513621234">+265 (0) 1 362 1234</a></p>
+                </address>
+            </div>
+
+            <div class="social-media">
+                <h3 class="sr-only">Social Media</h3>
+                <a href="https://facebook.com" aria-label="Facebook">
+                    <img src="asserts/icons/facebook.svg" alt="" width="24" height="24">
+                </a>
+                <a href="https://twitter.com" aria-label="Twitter">
+                    <img src="asserts/icons/twitter.svg" alt="" width="24" height="24">
+                </a>
+                <a href="https://instagram.com" aria-label="Instagram">
+                    <img src="asserts/icons/instagram.svg" alt="" width="24" height="24">
+                </a>
+            </div>
+
+            <div class="developer-info">
+                <p>WDD231 Class Project</p>
+                <p><strong>Laston James Sichali</strong></p>
+                <p>© <span id="current-year"></span> Karonga Chamber of Commerce</p>
+                <p>Last Modification: <span id="last-modified"></span></p>
+            </div>
+        </div>
     </footer>
 </body>
 

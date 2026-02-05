@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const welcomeMessage = document.getElementById('welcome-message');
     const closeWelcomeBtn = document.getElementById('close-welcome');
     const attractionsContainer = document.getElementById('attractions-container');
-    const visitCountElement = document.getElementById('visit-count');
+    const visitMessageElement = document.getElementById('visit-message');
 
     // Create modal dynamically
     const modal = document.createElement('dialog');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p class="modal-category" id="modal-category"></p>
             </div>
             <div class="modal-body">
-                <img id="modal-image" src="images/placeholder.jpg" alt="Attraction image" class="modal-image">
+                <img id="modal-image" src="images/placeholder.webp" alt="Attraction image" class="modal-image" loading="lazy">
                 <div class="modal-details">
                     <div class="modal-address" id="modal-address"></div>
                     <div class="modal-description" id="modal-description"></div>
@@ -51,18 +51,30 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Visit Counter
-    function updateVisitCount() {
-        let visitCount = localStorage.getItem('karongaDiscoverVisits') || 0;
-        visitCount = parseInt(visitCount) + 1;
-        localStorage.setItem('karongaDiscoverVisits', visitCount);
+    // localStorage for last visit
+    function updateVisitMessage() {
+        const now = new Date();
+        const lastVisit = localStorage.getItem('karongaLastVisit');
 
-        const visitText = visitCount === 1 ? 'first' :
-            visitCount === 2 ? 'second' :
-                visitCount === 3 ? 'third' :
-                    `${visitCount}th`;
+        if (!lastVisit) {
+            // First visit
+            visitMessageElement.textContent = "Welcome! This is your first visit.";
+        } else {
+            const lastVisitDate = new Date(lastVisit);
+            const timeDiff = now - lastVisitDate;
+            const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 
-        visitCountElement.textContent = visitText;
+            if (daysDiff === 0) {
+                visitMessageElement.textContent = "Welcome back! You were here earlier today.";
+            } else if (daysDiff === 1) {
+                visitMessageElement.textContent = "Welcome back! You were here yesterday.";
+            } else {
+                visitMessageElement.textContent = `Welcome back! You last visited ${daysDiff} days ago.`;
+            }
+        }
+
+        // Store current visit
+        localStorage.setItem('karongaLastVisit', now.toISOString());
     }
 
     // Close Welcome Message
@@ -74,83 +86,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 300);
     });
 
-    // Load Attractions Data
+    // Load Attractions from JSON
     async function loadAttractions() {
         try {
-            // Remove loading state
+            const response = await fetch('data/attractions.json');
+            if (!response.ok) {
+                throw new Error('Failed to load attractions');
+            }
+
+            const data = await response.json();
             attractionsContainer.innerHTML = '';
 
-            // Attractions data
-            const attractions = [
-                {
-                    id: 1,
-                    title: "Karonga Cultural Centre",
-                    category: "Cultural",
-                    image: "images/karonga-cultural-centre.webp",
-                    address: "Town Centre, Karonga",
-                    description: "A vibrant cultural hub showcasing traditional dances, crafts, and historical exhibitions of the northern region tribes.",
-                    features: ["Traditional dance performances", "Cultural exhibitions", "Craft workshops", "Historical artifacts"]
-                },
-                {
-                    id: 2,
-                    title: "Lake Malawi Beach",
-                    category: "Natural",
-                    image: "images/lake-malawi-beach.webp",
-                    address: "Lakeshore Road, Karonga",
-                    description: "Pristine sandy beaches along the world's third largest lake, perfect for swimming, fishing, and sunset views.",
-                    features: ["Swimming", "Fishing", "Boating", "Bird watching", "Sunset views"]
-                },
-                {
-                    id: 3,
-                    title: "Karonga Museum",
-                    category: "Historical",
-                    image: "images/karonga-museum.webp",
-                    address: "Mzumara Street, Karonga",
-                    description: "Home to the famous Malawisaurus fossil and exhibits tracing human evolution in the region.",
-                    features: ["Malawisaurus fossil", "Archaeological exhibits", "Educational tours", "Research center"]
-                },
-                {
-                    id: 4,
-                    title: "Kayelekera Mine Viewpoint",
-                    category: "Industrial",
-                    image: "images/kayelekera-mine.webp",
-                    address: "Kayelekera, 50km West",
-                    description: "Viewpoint overlooking one of Africa's largest uranium mines with educational tours about mineral resources.",
-                    features: ["Mine viewpoint", "Educational tours", "Geology exhibits", "Photo opportunities"]
-                },
-                {
-                    id: 5,
-                    title: "Livingstonia Mission",
-                    category: "Historical",
-                    image: "images/livingstonia-mission.webp",
-                    address: "Livingstonia, 90km South",
-                    description: "Historical mission station established by Scottish missionaries in the 19th century with panoramic views.",
-                    features: ["Historical buildings", "Museum", "Scenic views", "Cultural heritage"]
-                },
-                {
-                    id: 6,
-                    title: "Rukuru River Park",
-                    category: "Natural",
-                    image: "images/rukuru-river.webp",
-                    address: "Rukuru River Banks",
-                    description: "Beautiful riverside park ideal for picnics, bird watching, and nature walks along the riverbanks.",
-                    features: ["Picnic areas", "Bird watching", "Nature trails", "Fishing spots"]
-                }
-            ];
-
-            // Create placeholder image if images don't exist
-            const placeholderImages = [
-                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop",
-                "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
-                "https://images.unsplash.com/photo-1511735111819-9a3f7709049c?w-800&h=600&fit=crop",
-                "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&h=600&fit=crop",
-                "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
-                "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop"
-            ];
-
-            // Render attractions
-            attractions.forEach((attraction, index) => {
-                const card = createAttractionCard(attraction, index, placeholderImages[index]);
+            // Create cards for each attraction
+            data.attractions.forEach((attraction, index) => {
+                const card = createAttractionCard(attraction, index);
                 attractionsContainer.appendChild(card);
             });
 
@@ -165,18 +114,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Create Attraction Card
-    function createAttractionCard(attraction, index, placeholder) {
+    function createAttractionCard(attraction, index) {
         const card = document.createElement('article');
         card.className = 'attraction-card';
         card.style.animationDelay = `${index * 0.1}s`;
 
-        // Use placeholder if local image doesn't exist
-        const imageSrc = attraction.image;
-
         card.innerHTML = `
             <div class="card-image-container">
-                <img src="${imageSrc}" alt="${attraction.title}" class="card-image" loading="lazy"
-                     onerror="this.onerror=null; this.src='${placeholder}'">
+                <img src="${attraction.image}" alt="${attraction.title}" class="card-image" loading="lazy">
                 <span class="image-badge">${attraction.category}</span>
             </div>
             <div class="card-content">
@@ -247,12 +192,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Initialize
-    updateVisitCount();
+    updateVisitMessage();
     loadAttractions();
     animateStatistics();
 
     // Update last modified date
-    document.getElementById('last-modified-date').textContent = new Date().toLocaleDateString('en-US', {
+    document.getElementById('last-modified-date').textContent = new Date(document.lastModified).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'

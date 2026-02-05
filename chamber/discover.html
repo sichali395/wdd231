@@ -9,11 +9,11 @@
         content="Discover the beauty and attractions of Karonga, Malawi. Explore local landmarks, cultural sites, and natural wonders.">
     <meta name="author" content="Laston James Sichali">
 
-    <!-- Open Graph Meta Tags - USE ABSOLUTE URL -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Discover Karonga, Malawi">
     <meta property="og:description" content="Explore the beauty and attractions of Karonga, Malawi.">
-    <meta property="og:image" content="https://sichali395.github.io/chamber/images/karonga-cultural-centre.webp">
-    <meta property="og:url" content="https://sichali395.github.io/chamber/discover.html">
+    <meta property="og:image" content="https://sichali395.github.io/wdd231/chamber/images/attraction-1.webp">
+    <meta property="og:url" content="https://sichali395.github.io/wdd231/chamber/discover.html">
     <meta property="og:type" content="website">
 
     <!-- Favicon -->
@@ -24,15 +24,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="styles/discover-normalize.css">
-    <link rel="stylesheet" href="styles/discover-base.css">
-    <link rel="stylesheet" href="styles/discover-medium.css" media="(min-width: 641px)">
-    <link rel="stylesheet" href="styles/discover-large.css" media="(min-width: 1025px)">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="styles/discover.css">
 
     <!-- JavaScript -->
     <script src="scripts/main.js" defer></script>
-    <script src="scripts/discover.js" type="module"></script> <!-- REMOVED defer -->
+    <script src="scripts/discover.js" type="module"></script>
 </head>
 
 <body>
@@ -78,8 +75,7 @@
             <div class="welcome-message" id="welcome-message" role="alert" aria-live="polite">
                 <div class="message-content">
                     <span class="message-icon">👋</span>
-                    <p id="visitor-message-text">Welcome! It's your <span id="visit-count">first</span> visit to our
-                        Discover page.</p>
+                    <p id="visitor-message-text">Welcome! <span id="visit-message"></span></p>
                 </div>
                 <button class="message-close" id="close-welcome" aria-label="Close welcome message">
                     <span aria-hidden="true">×</span>
@@ -90,7 +86,7 @@
             <section class="attractions-section">
                 <h2 class="section-title">Karonga Attractions</h2>
                 <div class="attractions-grid" id="attractions-container">
-                    <!-- Dynamic content will be loaded here -->
+                    <!-- Dynamic content from JSON will be loaded here -->
                     <div class="loading-state" aria-live="polite">
                         <div class="loading-spinner"></div>
                         <p>Loading attractions...</p>
@@ -106,28 +102,28 @@
                         <div class="fact-icon">🏛️</div>
                         <h3>History & Heritage</h3>
                         <p>Karonga was established as a British colonial post in the late 19th century and is home to
-                            important archaeological sites including early human fossils at the Karonga Museum.</p>
+                            important archaeological sites including early human fossils.</p>
                     </article>
 
                     <article class="fact-card">
                         <div class="fact-icon">👨‍👩‍👧‍👦</div>
                         <h3>Cultural Diversity</h3>
                         <p>The district hosts diverse ethnic groups including Tumbuka, Nkhonde, and Tonga people, each
-                            preserving unique traditions, languages, and cultural practices.</p>
+                            preserving unique traditions and cultural practices.</p>
                     </article>
 
                     <article class="fact-card">
                         <div class="fact-icon">🌾</div>
                         <h3>Economic Activities</h3>
-                        <p>Agriculture (rice, cotton, maize), fishing in Lake Malawi, and mining (uranium at Kayelekera
-                            Mine) form the economic backbone, with growing tourism potential.</p>
+                        <p>Agriculture, fishing in Lake Malawi, and mining form the economic backbone, with growing
+                            tourism potential.</p>
                     </article>
 
                     <article class="fact-card">
                         <div class="fact-icon">🌤️</div>
                         <h3>Climate & Geography</h3>
-                        <p>Tropical savanna climate with distinct wet (Nov-Apr) and dry (May-Oct) seasons. Located on
-                            the western shore of Lake Malawi, offering beautiful landscapes.</p>
+                        <p>Tropical savanna climate with distinct wet and dry seasons. Located on the western shore of
+                            Lake Malawi, offering beautiful landscapes.</p>
                     </article>
                 </div>
             </section>
@@ -145,7 +141,7 @@
                         <div class="stat-label">Area (km²)</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number" id="attraction-count">12+</div>
+                        <div class="stat-number" id="attraction-count">8</div>
                         <div class="stat-label">Attractions</div>
                     </div>
                     <div class="stat-item">
@@ -196,8 +192,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Attraction Detail Modal - MOVED TO END OF BODY -->
 </body>
 
 </html>

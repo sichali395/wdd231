@@ -1,0 +1,117 @@
+{
+    "attractions": [
+        {
+            "id": 1,
+            "title": "Karonga Cultural Centre",
+            "category": "Cultural",
+            "image": "images/attraction-1.webp",
+            "address": "Town Centre, Karonga",
+            "description": "A vibrant cultural hub showcasing traditional dances, crafts, and historical exhibitions of the northern region tribes.",
+            "features": [
+                "Traditional dance performances",
+                "Cultural exhibitions",
+                "Craft workshops",
+                "Historical artifacts"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Lake Malawi Beach",
+            "category": "Natural",
+            "image": "images/attraction-2.webp",
+            "address": "Lakeshore Road, Karonga",
+            "description": "Pristine sandy beaches along the world's third largest lake, perfect for swimming, fishing, and sunset views.",
+            "features": [
+                "Swimming",
+                "Fishing",
+                "Boating",
+                "Bird watching",
+                "Sunset views"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Karonga Museum",
+            "category": "Historical",
+            "image": "images/attraction-3.webp",
+            "address": "Mzumara Street, Karonga",
+            "description": "Home to the famous Malawisaurus fossil and exhibits tracing human evolution in the region.",
+            "features": [
+                "Malawisaurus fossil",
+                "Archaeological exhibits",
+                "Educational tours",
+                "Research center"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Kayelekera Mine Viewpoint",
+            "category": "Industrial",
+            "image": "images/attraction-4.webp",
+            "address": "Kayelekera, 50km West",
+            "description": "Viewpoint overlooking one of Africa's largest uranium mines with educational tours about mineral resources.",
+            "features": [
+                "Mine viewpoint",
+                "Educational tours",
+                "Geology exhibits",
+                "Photo opportunities"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Livingstonia Mission",
+            "category": "Historical",
+            "image": "images/attraction-5.webp",
+            "address": "Livingstonia, 90km South",
+            "description": "Historical mission station established by Scottish missionaries in the 19th century with panoramic views.",
+            "features": [
+                "Historical buildings",
+                "Museum",
+                "Scenic views",
+                "Cultural heritage"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Rukuru River Park",
+            "category": "Natural",
+            "image": "images/attraction-6.webp",
+            "address": "Rukuru River Banks",
+            "description": "Beautiful riverside park ideal for picnics, bird watching, and nature walks along the riverbanks.",
+            "features": [
+                "Picnic areas",
+                "Bird watching",
+                "Nature trails",
+                "Fishing spots"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Karonga Market",
+            "category": "Cultural",
+            "image": "images/attraction-7.webp",
+            "address": "Market Street, Karonga",
+            "description": "Vibrant local market offering fresh produce, traditional crafts, and authentic Malawian goods.",
+            "features": [
+                "Fresh produce",
+                "Local crafts",
+                "Traditional goods",
+                "Cultural experience"
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Chilumba Harbor",
+            "category": "Industrial",
+            "image": "images/attraction-8.webp",
+            "address": "Chilumba Bay, Karonga",
+            "description": "Important harbor on Lake Malawi serving as a transportation and fishing hub with scenic views.",
+            "features": [
+                "Fishing harbor",
+                "Transport hub",
+                "Scenic views",
+                "Boating activities"
+            ]
+        }
+    ]
+}

@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
             attractionsContainer.innerHTML = '';
 
             // In a real app, you would fetch from discover.mjs
-            // For now, we'll use static data
             const attractions = [
                 {
                     id: 1,

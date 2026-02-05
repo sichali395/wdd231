@@ -38,3 +38,83 @@
         height: 220px;
     }
 }
+
+/* Medium screens (641px and up) */
+@media screen and (min-width: 641px) {
+
+    /* Header */
+    .header-wrapper {
+        padding: 0 var(--discover-space-md);
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex !important;
+        position: static;
+        background: transparent;
+        backdrop-filter: none;
+        padding: 0;
+        min-width: auto;
+        box-shadow: none;
+        margin-top: 0;
+    }
+
+    .nav-menu li {
+        margin: 0 0 0 var(--discover-space-sm);
+    }
+
+    .nav-menu a {
+        padding: 8px 16px;
+    }
+
+    /* Main Content */
+    .discover-wrapper {
+        padding: var(--discover-space-xl) var(--discover-space-md);
+    }
+
+    /* Page Banner */
+    .page-banner {
+        padding: var(--discover-space-xl);
+    }
+
+    .page-banner h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Attractions Grid */
+    .attractions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--discover-space-md);
+    }
+
+    /* Facts Grid */
+    .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--discover-space-md);
+    }
+
+    /* Statistics */
+    .stats-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--discover-space-lg);
+        align-items: start;
+    }
+
+    /* Modal */
+    .modal-body {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .modal-image {
+        height: 100%;
+        min-height: 300px;
+    }
+}

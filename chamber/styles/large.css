@@ -116,53 +116,60 @@
     }
 }
 
-/* Large screens (1025px and above) */
-
-@media (min-width: 1025px) {
-
-    /* Discover Grid - Large Layout with Grid Areas */
-    .discover-grid {
+/* Large screens (1025px and up) */
+@media screen and (min-width: 1025px) {
+    /* Header */
+    .header-wrapper,
+    .discover-wrapper,
+    .footer-container {
+        padding: 0;
+    }
+    
+    .site-logo h2 {
+        font-size: var(--discover-font-size-xl);
+    }
+    
+    /* Main Content */
+    .discover-wrapper {
+        padding: var(--discover-space-xl) 0;
+    }
+    
+    /* Page Banner */
+    .page-banner {
+        padding: var(--discover-space-xl) var(--discover-space-xl);
+    }
+    
+    .page-banner h1 {
+        font-size: 3rem;
+    }
+    
+    .banner-description {
+        font-size: var(--discover-font-size-xl);
+    }
+    
+    /* Attractions Grid */
+    .attractions-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--discover-space-lg);
+    }
+    
+    /* Facts Grid */
+    .facts-grid {
         grid-template-columns: repeat(4, 1fr);
-        grid-template-areas:
-            "card1 card1 card2 card2"
-            "card3 card4 card5 card6"
-            "card7 card7 card8 card8";
-        gap: 2.5rem;
+        gap: var(--discover-space-lg);
     }
-
-    /* Individual card sizing for large layout */
-    .discover-card:nth-child(1),
-    .discover-card:nth-child(7) {
-        grid-column: span 2;
+    
+    /* Statistics */
+    .stat-number {
+        font-size: 3rem;
     }
-
-    .card-image {
-        height: 250px;
+    
+    /* Typography */
+    .section-title {
+        font-size: 2.25rem;
     }
-
-    /* Enhanced hover effect for desktop */
-    .discover-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-    }
-
-    .discover-card:hover .card-image {
-        transform: scale(1.1);
-        filter: brightness(1.1) contrast(1.05);
-    }
-
-    /* Info Grid */
-    .info-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2.5rem;
-    }
-
-    .info-card {
-        padding: 2rem;
-    }
-
-    /* Adjust main content padding */
-    main {
-        padding: 3rem 2rem;
+    
+    .card-title {
+        font-size: 1.375rem;
     }
 }

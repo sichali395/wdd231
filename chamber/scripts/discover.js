@@ -1,314 +1,224 @@
-// scripts/discover.js - Discover page functionality
-
-import discoverItems from '../data/discover.mjs' assert { type: 'json' };
-
+// Discover page specific JavaScript
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('Discover page loaded');
+    // DOM Elements
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('main-menu');
+    const welcomeMessage = document.getElementById('welcome-message');
+    const closeWelcomeBtn = document.getElementById('close-welcome');
+    const attractionsContainer = document.getElementById('attractions-container');
+    const modal = document.getElementById('attraction-modal');
+    const modalClose = document.getElementById('modal-close');
+    const visitCountElement = document.getElementById('visit-count');
 
-    // Initialize localStorage for visit tracking
-    initializeVisitTracking();
-
-    // Load and display discover items
-    loadDiscoverItems();
-
-    // Setup close button for visitor message
-    setupCloseButton();
-});
-
-// Initialize visit tracking with localStorage
-function initializeVisitTracking() {
-    const visitorText = document.getElementById('visitor-text');
-    const visitorMessage = document.getElementById('visitor-message');
-
-    if (!visitorText || !visitorMessage) return;
-
-    // Get current visit timestamp
-    const currentVisit = Date.now();
-    const lastVisit = localStorage.getItem('karongaLastVisit');
-
-    // Store current visit for next time
-    localStorage.setItem('karongaLastVisit', currentVisit.toString());
-
-    // Determine message based on last visit
-    let message = '';
-
-    if (!lastVisit) {
-        // First visit
-        message = 'Welcome! Let us know if you have any questions.';
-    } else {
-        const lastVisitTime = parseInt(lastVisit);
-        const timeDifference = currentVisit - lastVisitTime;
-        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-
-        if (daysDifference === 0) {
-            // Same day visit
-            message = 'Back so soon! Awesome!';
-        } else if (daysDifference === 1) {
-            // 1 day ago
-            message = `You last visited ${daysDifference} day ago.`;
-        } else {
-            // Multiple days ago
-            message = `You last visited ${daysDifference} days ago.`;
-        }
-    }
-
-    // Display message
-    visitorText.textContent = message;
-
-    // Store message in localStorage for persistence
-    localStorage.setItem('karongaWelcomeMessage', message);
-}
-
-// Load discover items from JSON and create cards
-function loadDiscoverItems() {
-    const discoverContainer = document.getElementById('discover-grid');
-
-    if (!discoverContainer) {
-        console.error('Discover container not found');
-        return;
-    }
-
-    console.log('Loading discover items...', discoverItems);
-
-    // Clear loading message
-    discoverContainer.innerHTML = '';
-    discoverContainer.className = 'discover-grid';
-
-    // Create cards for each discover item
-    discoverItems.forEach((item, index) => {
-        const card = createDiscoverCard(item, index + 1);
-        discoverContainer.appendChild(card);
+    // Navigation Toggle
+    navToggle.addEventListener('click', function () {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        navMenu.setAttribute('aria-expanded', !expanded);
     });
-}
 
-// Create a discover card
-function createDiscoverCard(item, cardNumber) {
-    console.log(`Creating card for: ${item.name}, image: ${item.image}`);
-
-    const card = document.createElement('article');
-    card.className = 'discover-card';
-    card.setAttribute('aria-label', `${item.name} - ${item.category} attraction`);
-
-    // Create image figure
-    const figure = document.createElement('figure');
-    figure.className = 'card-figure';
-
-    const img = document.createElement('img');
-    // FIXED: Use relative path from discover.html location
-    // Since discover.html is in chamber/ folder, images are in chamber/images/
-    // So we need: ./images/filename.webp
-    img.src = `./images/${item.image}`;
-    img.alt = `${item.name} in Karonga, Malawi`;
-    img.className = 'card-image';
-    img.loading = 'lazy';
-    img.width = 300;
-    img.height = 200;
-
-    // Add detailed error handling
-    img.onerror = function () {
-        console.error(`❌ Failed to load image: ${this.src}`);
-        console.error(`Looking for: ${item.image} in ./images/`);
-
-        // Try alternative paths
-        const alternativePaths = [
-            `images/${item.image}`,
-            `../images/${item.image}`,
-            `/chamber/images/${item.image}`
-        ];
-
-        let found = false;
-        for (let i = 0; i < alternativePaths.length; i++) {
-            const testImg = new Image();
-            testImg.onload = () => {
-                if (!found) {
-                    found = true;
-                    console.log(`✓ Found image at: ${alternativePaths[i]}`);
-                    this.src = alternativePaths[i];
-                }
-            };
-            testImg.src = alternativePaths[i];
+    // Close navigation when clicking outside
+    document.addEventListener('click', function (event) {
+        if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navMenu.setAttribute('aria-expanded', 'false');
         }
+    });
 
-        // If still not found after 1 second, use fallback
+    // Visit Counter
+    function updateVisitCount() {
+        let visitCount = localStorage.getItem('karongaDiscoverVisits') || 0;
+        visitCount = parseInt(visitCount) + 1;
+        localStorage.setItem('karongaDiscoverVisits', visitCount);
+
+        const visitText = visitCount === 1 ? 'first' :
+            visitCount === 2 ? 'second' :
+                visitCount === 3 ? 'third' :
+                    `${visitCount}th`;
+
+        visitCountElement.textContent = visitText;
+    }
+
+    // Close Welcome Message
+    closeWelcomeBtn.addEventListener('click', function () {
+        welcomeMessage.style.opacity = '0';
+        welcomeMessage.style.transform = 'translateY(-20px)';
         setTimeout(() => {
-            if (!found) {
-                console.log('Using fallback image');
-                this.src = './images/business-conference.jpg';
-                this.alt = 'Karonga attraction image';
-            }
-        }, 1000);
-
-        this.onerror = null; // Prevent infinite loop
-    };
-
-    img.onload = function () {
-        console.log(`✓ Successfully loaded: ${this.src}`);
-    };
-
-    figure.appendChild(img);
-
-    // Create card content
-    const content = document.createElement('div');
-    content.className = 'card-content';
-
-    const title = document.createElement('h2');
-    title.textContent = item.name;
-
-    const address = document.createElement('address');
-    address.textContent = item.address;
-
-    const description = document.createElement('p');
-    description.textContent = item.description;
-
-    const learnMoreBtn = document.createElement('button');
-    learnMoreBtn.className = 'learn-more-btn';
-    learnMoreBtn.textContent = 'Learn More';
-    learnMoreBtn.setAttribute('aria-label', `Learn more about ${item.name}`);
-
-    // Add click event to button
-    learnMoreBtn.addEventListener('click', function () {
-        showItemDetails(item);
+            welcomeMessage.style.display = 'none';
+        }, 300);
     });
 
-    // Add keyboard support
-    learnMoreBtn.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            showItemDetails(item);
-        }
-    });
+    // Load Attractions Data
+    async function loadAttractions() {
+        try {
+            // Remove loading state
+            attractionsContainer.innerHTML = '';
 
-    // Assemble card content
-    content.appendChild(title);
-    content.appendChild(address);
-    content.appendChild(description);
-    content.appendChild(learnMoreBtn);
+            // In a real app, you would fetch from discover.mjs
+            // For now, we'll use static data
+            const attractions = [
+                {
+                    id: 1,
+                    title: "Karonga Cultural Centre",
+                    category: "Cultural",
+                    image: "images/karonga-cultural-centre.webp",
+                    address: "Town Centre, Karonga",
+                    description: "A vibrant cultural hub showcasing traditional dances, crafts, and historical exhibitions of the northern region tribes.",
+                    features: ["Traditional dance performances", "Cultural exhibitions", "Craft workshops", "Historical artifacts"]
+                },
+                {
+                    id: 2,
+                    title: "Lake Malawi Beach",
+                    category: "Natural",
+                    image: "images/lake-malawi-beach.webp",
+                    address: "Lakeshore Road, Karonga",
+                    description: "Pristine sandy beaches along the world's third largest lake, perfect for swimming, fishing, and sunset views.",
+                    features: ["Swimming", "Fishing", "Boating", "Bird watching", "Sunset views"]
+                },
+                {
+                    id: 3,
+                    title: "Karonga Museum",
+                    category: "Historical",
+                    image: "images/karonga-museum.webp",
+                    address: "Mzumara Street, Karonga",
+                    description: "Home to the famous Malawisaurus fossil and exhibits tracing human evolution in the region.",
+                    features: ["Malawisaurus fossil", "Archaeological exhibits", "Educational tours", "Research center"]
+                },
+                {
+                    id: 4,
+                    title: "Kayelekera Mine Viewpoint",
+                    category: "Industrial",
+                    image: "images/kayelekera-mine.webp",
+                    address: "Kayelekera, 50km West",
+                    description: "Viewpoint overlooking one of Africa's largest uranium mines with educational tours about mineral resources.",
+                    features: ["Mine viewpoint", "Educational tours", "Geology exhibits", "Photo opportunities"]
+                },
+                {
+                    id: 5,
+                    title: "Livingstonia Mission",
+                    category: "Historical",
+                    image: "images/livingstonia-mission.webp",
+                    address: "Livingstonia, 90km South",
+                    description: "Historical mission station established by Scottish missionaries in the 19th century with panoramic views.",
+                    features: ["Historical buildings", "Museum", "Scenic views", "Cultural heritage"]
+                },
+                {
+                    id: 6,
+                    title: "Rukuru River Park",
+                    category: "Natural",
+                    image: "images/rukuru-river.webp",
+                    address: "Rukuru River Banks",
+                    description: "Beautiful riverside park ideal for picnics, bird watching, and nature walks along the riverbanks.",
+                    features: ["Picnic areas", "Bird watching", "Nature trails", "Fishing spots"]
+                }
+            ];
 
-    // Assemble card
-    card.appendChild(figure);
-    card.appendChild(content);
+            // Render attractions
+            attractions.forEach((attraction, index) => {
+                const card = createAttractionCard(attraction, index);
+                attractionsContainer.appendChild(card);
+            });
 
-    return card;
-}
-
-// Show item details modal
-function showItemDetails(item) {
-    // Create modal for details
-    showDetailModal(item);
-}
-
-// Show modal with item details
-function showDetailModal(item) {
-    // Check if modal already exists
-    let modal = document.getElementById('item-detail-modal');
-
-    if (!modal) {
-        // Create modal
-        modal = document.createElement('div');
-        modal.id = 'item-detail-modal';
-        modal.className = 'detail-modal';
-        modal.setAttribute('role', 'dialog');
-        modal.setAttribute('aria-labelledby', 'modal-title');
-        modal.setAttribute('aria-modal', 'true');
-        modal.hidden = true;
-
-        modal.innerHTML = `
-            <div class="modal-content">
-                <button class="modal-close" aria-label="Close modal">×</button>
-                <h2 id="modal-title"></h2>
-                <div class="modal-body">
-                    <img class="modal-image" alt="">
-                    <div class="modal-details">
-                        <address class="modal-address"></address>
-                        <p class="modal-description"></p>
-                        <p class="modal-category"></p>
-                    </div>
+        } catch (error) {
+            console.error('Error loading attractions:', error);
+            attractionsContainer.innerHTML = `
+                <div class="error-message">
+                    <p>Unable to load attractions. Please try again later.</p>
                 </div>
+            `;
+        }
+    }
+
+    // Create Attraction Card
+    function createAttractionCard(attraction, index) {
+        const card = document.createElement('article');
+        card.className = 'attraction-card';
+        card.style.animationDelay = `${index * 0.1}s`;
+
+        card.innerHTML = `
+            <div class="card-image-container">
+                <img src="${attraction.image}" alt="${attraction.title}" class="card-image" loading="lazy">
+                <span class="image-badge">${attraction.category}</span>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">${attraction.title}</h3>
+                <div class="card-location">📍 ${attraction.address}</div>
+                <p class="card-description">${attraction.description}</p>
+                <button class="card-button" data-id="${attraction.id}">
+                    Learn More
+                </button>
             </div>
         `;
 
-        document.body.appendChild(modal);
+        // Add click event to button
+        const button = card.querySelector('.card-button');
+        button.addEventListener('click', () => openModal(attraction));
 
-        // Add close functionality
-        const closeBtn = modal.querySelector('.modal-close');
-        closeBtn.addEventListener('click', closeModal);
-
-        // Close when clicking outside
-        modal.addEventListener('click', function (event) {
-            if (event.target === modal) {
-                closeModal();
-            }
-        });
-
-        // Close with Escape key
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && !modal.hidden) {
-                closeModal();
-            }
-        });
+        return card;
     }
 
-    // Populate modal with item data - FIXED IMAGE PATH HERE TOO
-    modal.querySelector('#modal-title').textContent = item.name;
-    modal.querySelector('.modal-image').src = `./images/${item.image}`;
-    modal.querySelector('.modal-image').alt = item.name;
-    modal.querySelector('.modal-address').textContent = item.address;
-    modal.querySelector('.modal-description').textContent = item.description;
-    modal.querySelector('.modal-category').textContent = `Category: ${item.category}`;
+    // Open Modal
+    function openModal(attraction) {
+        document.getElementById('modal-title').textContent = attraction.title;
+        document.getElementById('modal-category').textContent = attraction.category;
+        document.getElementById('modal-image').src = attraction.image;
+        document.getElementById('modal-image').alt = attraction.title;
+        document.getElementById('modal-address').textContent = attraction.address;
+        document.getElementById('modal-description').textContent = attraction.description;
 
-    // Show modal
-    modal.hidden = false;
-    document.body.style.overflow = 'hidden';
-
-    // Focus on close button for accessibility
-    setTimeout(() => {
-        modal.querySelector('.modal-close').focus();
-    }, 100);
-}
-
-function closeModal() {
-    const modal = document.getElementById('item-detail-modal');
-    if (modal) {
-        modal.hidden = true;
-        document.body.style.overflow = '';
-    }
-}
-
-// Setup close button for visitor message
-function setupCloseButton() {
-    const closeBtn = document.getElementById('close-message');
-    const visitorMessage = document.getElementById('visitor-message');
-
-    if (closeBtn && visitorMessage) {
-        closeBtn.addEventListener('click', function () {
-            visitorMessage.style.display = 'none';
-            localStorage.setItem('karongaHideWelcome', 'true');
+        const featuresList = document.getElementById('modal-features');
+        featuresList.innerHTML = '';
+        attraction.features.forEach(feature => {
+            const li = document.createElement('li');
+            li.textContent = feature;
+            featuresList.appendChild(li);
         });
 
-        if (localStorage.getItem('karongaHideWelcome') === 'true') {
-            visitorMessage.style.display = 'none';
+        modal.showModal();
+    }
+
+    // Close Modal
+    modalClose.addEventListener('click', () => modal.close());
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.close();
         }
-    }
-}
-
-// Debug function to test image paths
-function testImagePaths() {
-    console.log('Testing image paths...');
-
-    const testImages = [
-        './images/lake-malawi.webp',
-        'images/lake-malawi.webp',
-        '../images/lake-malawi.webp',
-        '/chamber/images/lake-malawi.webp'
-    ];
-
-    testImages.forEach(path => {
-        const img = new Image();
-        img.onload = () => console.log(`✓ ${path} works`);
-        img.onerror = () => console.log(`✗ ${path} fails`);
-        img.src = path;
     });
-}
 
-// Run path test on load
-setTimeout(testImagePaths, 1000);
+    // Update Statistics with animation
+    function animateStatistics() {
+        const counters = document.querySelectorAll('.stat-number');
+        counters.forEach(counter => {
+            const target = parseInt(counter.textContent.replace(/[^0-9]/g, ''));
+            const suffix = counter.textContent.replace(/[0-9]/g, '');
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current) + suffix;
+                }
+            }, 20);
+        });
+    }
+
+    // Initialize
+    updateVisitCount();
+    loadAttractions();
+    animateStatistics();
+
+    // Update last modified date
+    document.getElementById('last-modified-date').textContent = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+    // Update current year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+});

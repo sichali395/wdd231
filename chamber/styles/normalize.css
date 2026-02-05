@@ -196,7 +196,7 @@ template {
     display: none;
 }
 
-/* Minimal normalize for Discover page only */
+/* Minimal normalize.css for discover page only */
 * {
     margin: 0;
     padding: 0;

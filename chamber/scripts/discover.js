@@ -6,9 +6,35 @@ document.addEventListener('DOMContentLoaded', function () {
     const welcomeMessage = document.getElementById('welcome-message');
     const closeWelcomeBtn = document.getElementById('close-welcome');
     const attractionsContainer = document.getElementById('attractions-container');
-    const modal = document.getElementById('attraction-modal');
-    const modalClose = document.getElementById('modal-close');
     const visitCountElement = document.getElementById('visit-count');
+
+    // Create modal dynamically
+    const modal = document.createElement('dialog');
+    modal.className = 'attraction-modal';
+    modal.id = 'attraction-modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Close dialog">×</button>
+            <div class="modal-header">
+                <h2 id="modal-title">Attraction Details</h2>
+                <p class="modal-category" id="modal-category"></p>
+            </div>
+            <div class="modal-body">
+                <img id="modal-image" src="images/placeholder.jpg" alt="Attraction image" class="modal-image">
+                <div class="modal-details">
+                    <div class="modal-address" id="modal-address"></div>
+                    <div class="modal-description" id="modal-description"></div>
+                    <div class="modal-features">
+                        <h3>Features</h3>
+                        <ul id="modal-features"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    const modalClose = document.getElementById('modal-close');
 
     // Navigation Toggle
     navToggle.addEventListener('click', function () {
@@ -54,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Remove loading state
             attractionsContainer.innerHTML = '';
 
-            // In a real app, you would fetch from discover.mjs
+            // Attractions data
             const attractions = [
                 {
                     id: 1,
@@ -112,9 +138,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ];
 
+            // Create placeholder image if images don't exist
+            const placeholderImages = [
+                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1511735111819-9a3f7709049c?w-800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop"
+            ];
+
             // Render attractions
             attractions.forEach((attraction, index) => {
-                const card = createAttractionCard(attraction, index);
+                const card = createAttractionCard(attraction, index, placeholderImages[index]);
                 attractionsContainer.appendChild(card);
             });
 
@@ -129,14 +165,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Create Attraction Card
-    function createAttractionCard(attraction, index) {
+    function createAttractionCard(attraction, index, placeholder) {
         const card = document.createElement('article');
         card.className = 'attraction-card';
         card.style.animationDelay = `${index * 0.1}s`;
 
+        // Use placeholder if local image doesn't exist
+        const imageSrc = attraction.image;
+
         card.innerHTML = `
             <div class="card-image-container">
-                <img src="${attraction.image}" alt="${attraction.title}" class="card-image" loading="lazy">
+                <img src="${imageSrc}" alt="${attraction.title}" class="card-image" loading="lazy"
+                     onerror="this.onerror=null; this.src='${placeholder}'">
                 <span class="image-badge">${attraction.category}</span>
             </div>
             <div class="card-content">

@@ -9,10 +9,10 @@
         content="Discover the beauty and attractions of Karonga, Malawi. Explore local landmarks, cultural sites, and natural wonders.">
     <meta name="author" content="Laston James Sichali">
 
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph Meta Tags - USE ABSOLUTE URL -->
     <meta property="og:title" content="Discover Karonga, Malawi">
     <meta property="og:description" content="Explore the beauty and attractions of Karonga, Malawi.">
-    <meta property="og:image" content="images/karonga-cultural-centre.webp">
+    <meta property="og:image" content="https://sichali395.github.io/chamber/images/karonga-cultural-centre.webp">
     <meta property="og:url" content="https://sichali395.github.io/chamber/discover.html">
     <meta property="og:type" content="website">
 
@@ -32,7 +32,7 @@
 
     <!-- JavaScript -->
     <script src="scripts/main.js" defer></script>
-    <script src="scripts/discover.js" type="module" defer></script>
+    <script src="scripts/discover.js" type="module"></script> <!-- REMOVED defer -->
 </head>
 
 <body>
@@ -171,7 +171,7 @@
                 </address>
             </div>
 
-            <!-- Social Media Links - FIXED FOLDER PATH to 'asserts' -->
+            <!-- Social Media Links -->
             <div class="footer-social">
                 <h3 class="sr-only">Connect With Us</h3>
                 <div class="social-icons">
@@ -197,27 +197,7 @@
         </div>
     </footer>
 
-    <!-- Attraction Detail Modal -->
-    <dialog class="attraction-modal" id="attraction-modal">
-        <div class="modal-content">
-            <button class="modal-close" id="modal-close" aria-label="Close dialog">×</button>
-            <div class="modal-header">
-                <h2 id="modal-title"></h2>
-                <p class="modal-category" id="modal-category"></p>
-            </div>
-            <div class="modal-body">
-                <img id="modal-image" src="" alt="" class="modal-image">
-                <div class="modal-details">
-                    <div class="modal-address" id="modal-address"></div>
-                    <div class="modal-description" id="modal-description"></div>
-                    <div class="modal-features">
-                        <h3>Features</h3>
-                        <ul id="modal-features"></ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </dialog>
+    <!-- Attraction Detail Modal - MOVED TO END OF BODY -->
 </body>
 
 </html>

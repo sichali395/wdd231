@@ -118,58 +118,73 @@
 
 /* Large screens (1025px and up) */
 @media screen and (min-width: 1025px) {
+
     /* Header */
     .header-wrapper,
     .discover-wrapper,
     .footer-container {
         padding: 0;
     }
-    
+
     .site-logo h2 {
         font-size: var(--discover-font-size-xl);
     }
-    
+
     /* Main Content */
     .discover-wrapper {
         padding: var(--discover-space-xl) 0;
     }
-    
+
     /* Page Banner */
     .page-banner {
         padding: var(--discover-space-xl) var(--discover-space-xl);
     }
-    
+
     .page-banner h1 {
         font-size: 3rem;
     }
-    
+
     .banner-description {
         font-size: var(--discover-font-size-xl);
     }
-    
+
     /* Attractions Grid */
     .attractions-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: var(--discover-space-lg);
     }
-    
+
     /* Facts Grid */
     .facts-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: var(--discover-space-lg);
     }
-    
+
     /* Statistics */
     .stat-number {
         font-size: 3rem;
     }
-    
+
     /* Typography */
     .section-title {
         font-size: 2.25rem;
     }
-    
+
     .card-title {
         font-size: 1.375rem;
+    }
+
+    /* Image Cards */
+    .card-image-container {
+        height: 250px;
+    }
+
+    /* Modal */
+    .attraction-modal {
+        width: 900px;
+    }
+
+    .modal-image {
+        height: 350px;
     }
 }

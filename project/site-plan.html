@@ -4,29 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Student Name">
+    <meta name="author" content="Your Name">
     <meta name="description"
         content="Website plan for Kisyombe Village Heritage site under Paramount Traditional Authority Kyungu in Karonga, Malawi">
 
     <!-- RUBRIC CRITERION 8: Valid HTML and proper title -->
     <title>Kisyombe Village - Website Plan | WDD 231 Project</title>
 
+    <!-- RUBRIC CRITERION 5 & 6: Color Schema and Typography in document -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- RUBRIC CRITERION 6: Typography - Fonts selected -->
     <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
 
     <!-- RUBRIC CRITERION 8: Valid CSS -->
     <link rel="stylesheet" href="styles/site-plan.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
+    <!-- Skip link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    <!-- Header -->
     <header class="site-header" role="banner" aria-label="Website plan header">
         <div class="container">
             <!-- RUBRIC CRITERION 1: Site Name -->
@@ -36,6 +38,7 @@
         </div>
     </header>
 
+    <!-- Navigation -->
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
         <div class="container">
             <ul>
@@ -49,6 +52,7 @@
         </div>
     </nav>
 
+    <!-- Main Content -->
     <main id="main-content" class="container" role="main">
 
         <!-- SECTION 1: SITE NAME (RUBRIC CRITERION 1) -->
@@ -319,43 +323,23 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer" role="contentinfo" aria-label="Site footer">
         <div class="container">
             <p>Website Plan for <strong>Kisyombe Village Heritage</strong> Project</p>
             <p>WDD 231 Final Project • Last Updated: <span id="current-date"></span></p>
             <div class="validation-links">
-                <a href="https://validator.w3.org/" target="_blank" rel="noopener">HTML Validation</a> |
-                <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener">CSS Validation</a> |
-                <a href="index.html">Return to Home</a>
+                <a href="https://validator.w3.org/nu/?doc=https://sichali395.github.io/wdd231/project/site-plan.html"
+                    target="_blank" rel="noopener">HTML Validation</a> |
+                <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://sichali395.github.io/wdd231/project/site-plan.html"
+                    target="_blank" rel="noopener">CSS Validation</a> |
+                <a href="https://sichali395.github.io/wdd231/">Course Home</a>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Set current date in footer
-        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- JavaScript for functionality -->
+    <script src="scripts/site-plan.js"></script>
 </body>
 
 </html>

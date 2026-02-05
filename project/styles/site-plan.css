@@ -6,6 +6,7 @@
 }
 
 :root {
+    /* RUBRIC CRITERION 4 & 5: Color Scheme */
     --primary-color: #2E5E4E;
     /* Forest Green */
     --secondary-color: #D4A55A;
@@ -22,6 +23,7 @@
 }
 
 body {
+    /* RUBRIC CRITERION 6: Typography */
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
@@ -239,7 +241,6 @@ a:focus {
     box-shadow: var(--box-shadow);
 }
 
-/* Improved contrast for light background samples */
 .color-sample:nth-child(3) {
     color: #333333;
     border: 2px solid #ddd;
@@ -493,6 +494,29 @@ a:focus {
     outline-offset: 2px;
 }
 
+/* Additional styles for rubric alignment */
+.note {
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    background-color: rgba(212, 165, 90, 0.1);
+    border-left: 3px solid var(--secondary-color);
+    font-style: italic;
+}
+
+.validation-links {
+    margin-top: 1rem;
+}
+
+.validation-links a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.validation-links a:hover,
+.validation-links a:focus {
+    color: white;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .main-nav ul {
@@ -539,27 +563,4 @@ a:focus {
     .site-header h1 {
         font-size: 2rem;
     }
-}
-
-/* Additional styles for rubric alignment */
-.note {
-    margin-top: 1.5rem;
-    padding: 0.8rem;
-    background-color: rgba(212, 165, 90, 0.1);
-    border-left: 3px solid var(--secondary-color);
-    font-style: italic;
-}
-
-.validation-links {
-    margin-top: 1rem;
-}
-
-.validation-links a {
-    color: var(--secondary-color);
-    text-decoration: underline;
-}
-
-.validation-links a:hover,
-.validation-links a:focus {
-    color: white;
 }

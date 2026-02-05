@@ -196,7 +196,7 @@ template {
     display: none;
 }
 
-/* Minimal normalize.css for discover page only */
+/* Minimal normalize.css */
 * {
     margin: 0;
     padding: 0;
@@ -216,6 +216,16 @@ main {
     display: block;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -232,8 +242,13 @@ textarea {
     margin: 0;
 }
 
-button {
+button,
+input {
     overflow: visible;
+}
+
+button,
+select {
     text-transform: none;
 }
 
@@ -244,13 +259,24 @@ button,
     -webkit-appearance: button;
 }
 
-button::-moz-focus-inner {
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
     border-style: none;
     padding: 0;
 }
 
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
 a {
     background-color: transparent;
+    text-decoration: none;
 }
 
 ul {

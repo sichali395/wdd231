@@ -38,18 +38,6 @@
     --transition: 0.3s ease;
 }
 
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 16px;
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: var(--font-family);
     line-height: 1.6;

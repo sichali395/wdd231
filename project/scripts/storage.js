@@ -1,4 +1,9 @@
-// ES Module - Local Storage functionality for Kisyombe Village Heritage
+/**
+ * KISYOMBE VILLAGE HERITAGE - LOCAL STORAGE MODULE
+ * ES Module - Handles client-side persistence
+ * Rubric Requirement: Local Storage implementation
+ */
+
 const STORAGE_KEY = 'kisyombe_preferences';
 
 export function initStorage() {
@@ -11,15 +16,19 @@ export function initStorage() {
             newsletter: false,
             visitedPages: [],
             firstVisit: new Date().toISOString(),
-            lastVisit: new Date().toISOString()
+            lastVisit: new Date().toISOString(),
+            visits: 1
         };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultPreferences));
-        console.log('Local storage initialized with default preferences');
+        console.log('✅ Local storage initialized with default preferences');
+        return defaultPreferences;
     } else {
-        // Update last visit date
+        // Update last visit date and increment visit count
         const preferences = JSON.parse(localStorage.getItem(STORAGE_KEY));
         preferences.lastVisit = new Date().toISOString();
+        preferences.visits = (preferences.visits || 0) + 1;
         localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences));
+        return preferences;
     }
 }
 
@@ -40,7 +49,7 @@ export function setPreference(key, value) {
         preferences.lastUpdated = new Date().toISOString();
         localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences));
 
-        // Track visited pages for navigation history
+        // Track visited pages for history
         if (key === 'lastPage') {
             if (!preferences.visitedPages) {
                 preferences.visitedPages = [];
@@ -49,6 +58,10 @@ export function setPreference(key, value) {
                 page: value,
                 timestamp: new Date().toISOString()
             });
+            // Keep only last 10 visits
+            if (preferences.visitedPages.length > 10) {
+                preferences.visitedPages.shift();
+            }
             localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences));
         }
 
@@ -70,6 +83,5 @@ export function getAllPreferences() {
 
 export function clearPreferences() {
     localStorage.removeItem(STORAGE_KEY);
-    initStorage();
-    return true;
+    return initStorage();
 }

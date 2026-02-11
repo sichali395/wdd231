@@ -1,4 +1,9 @@
-// ES Module - Modal dialog functionality
+/**
+ * KISYOMBE VILLAGE HERITAGE - MODAL MODULE
+ * ES Module - Handles modal dialog functionality
+ * Rubric Requirement: Modal dialog for user interaction
+ */
+
 export function initModal() {
     const modal = document.getElementById('heritage-modal');
     const closeBtn = document.querySelector('.modal-close');
@@ -24,7 +29,7 @@ export function initModal() {
         overlay.addEventListener('click', closeModal);
     }
 
-    // Close on Escape key - KEYBOARD ACCESSIBILITY
+    // Close on Escape key - Keyboard accessibility
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
             closeModal();

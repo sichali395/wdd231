@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your Name">
+    <meta name="description" content="Form submission confirmation for Kisyombe Village Heritage">
+    <title>Form Submission | Kisyombe Village Heritage</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container">
+            <h1>Form Submission Confirmation</h1>
+            <p class="subtitle">Kisyombe Village Heritage</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="nature.html">Natural Features</a></li>
+                <li><a href="culture.html">Culture & Heritage</a></li>
+                <li><a href="attributions.html">Attributions</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container">
+        <h2>Thank You for Your Interest in Kisyombe Village!</h2>
+
+        <div class="content-box">
+            <h3>Your Submission Details</h3>
+            <div id="form-data" class="form-data-grid">
+                <!-- Dynamically populated by JavaScript -->
+            </div>
+            <a href="index.html" class="btn btn-primary">Return to Home</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Kisyombe Village Heritage</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { getFormDataFromURL } from './scripts/main.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const formData = getFormDataFromURL();
+            const container = document.getElementById('form-data');
+
+            if (Object.keys(formData).length > 0) {
+                let html = '';
+                for (const [key, value] of Object.entries(formData)) {
+                    html += `
+                        <div class="data-card">
+                            <h4>${key.replace(/-/g, ' ')}</h4>
+                            <p>${value}</p>
+                        </div>
+                    `;
+                }
+                container.innerHTML = html;
+            } else {
+                container.innerHTML = '<p>No form data received.</p>';
+            }
+        });
+    </script>
+</body>
+
+</html>

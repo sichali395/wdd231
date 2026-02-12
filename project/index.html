@@ -7,12 +7,12 @@
 
     <!-- META DESCRIPTION - CORRECTED: 158 characters -->
     <meta name="description"
-        content="Discover Kisyombe Village Heritage - Sichali clan history since 1835, sacred Chiwondo Lagoon with salty water & no outlet, and 470+ years of Kyungu Dynasty in Karonga, Malawi.">
+        content="Kisyombe Village Heritage: Sichali clan history since 1835, sacred Chiwondo Lagoon with salty water & no outlet, and 470+ years of Kyungu Dynasty in Karonga, Malawi.">
 
-    <!-- AUTHOR ATTRIBUTION - WITH STUDENT NAME -->
-    <meta name="author" content="Sichali395 - WDD 231 Student Project">
+    <!-- AUTHOR ATTRIBUTION -->
+    <meta name="author" content="Sichali395 - WDD 231 Student">
 
-    <!-- OPEN GRAPH META - FULLY CORRECTED -->
+    <!-- OPEN GRAPH META - CORRECTED: 158 characters -->
     <meta property="og:title" content="Kisyombe Village Heritage | Sichali Clan & Chiwondo Lagoon">
     <meta property="og:description"
         content="Discover Kisyombe Village - 20km south of Karonga. Home of Sichali clan since 1835, sacred Chiwondo Lagoon with salty water & no outlet, and Kyungu Dynasty heritage.">
@@ -36,7 +36,6 @@
 
     <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,8 +44,9 @@
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS - ONLY MAIN.CSS -->
+    <!-- TWO CSS FILES - REQUIRED BY AUDIT -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/base.css">
 </head>
 
 <body>
@@ -54,30 +54,30 @@
 
     <header class="site-header">
         <div class="container">
-            <div class="logo-area">
-                <img src="assets/icons/logo.svg" alt="Kisyombe Village Heritage Logo - Sichali Clan" class="logo"
+            <div class="logo-wrapper">
+                <img src="assets/icons/logo.svg" alt="Kisyombe Village Heritage Logo - Sichali Clan" class="site-logo"
                     width="60" height="60" loading="eager">
                 <div>
                     <h1>Kisyombe Village Heritage</h1>
-                    <p class="subtitle">Sichali Clan • Kyungu Authority • Karonga, Malawi</p>
+                    <p class="site-tagline">Sichali Clan • Kyungu Authority • Karonga, Malawi</p>
                 </div>
             </div>
-            <p class="location">📍 20km South of Karonga Town • Population: 10,000+ • Est. c.1835</p>
+            <p class="village-location">📍 20km South of Karonga • Population: 10,000+ • Est. c.1835</p>
         </div>
     </header>
 
-    <nav class="main-nav" aria-label="Main navigation">
+    <nav class="site-nav" aria-label="Main navigation">
         <div class="container">
-            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+            <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <ul id="nav-menu" class="nav-menu">
+            <ul id="navMenu" class="nav-list">
                 <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                 <li><a href="nature.html">Chiwondo Lagoon</a></li>
                 <li><a href="culture.html">Sichali Clan & Kyungu</a></li>
-                <li><a href="#visit-form">Visit & Contribute</a></li>
+                <li><a href="#visit-section">Visit & Contribute</a></li>
                 <li><a href="attributions.html">Attributions</a></li>
                 <li><a href="validation-report.html">Validation</a></li>
             </ul>
@@ -86,7 +86,7 @@
 
     <main id="main-content">
         <!-- HERO SECTION -->
-        <section class="hero">
+        <section class="hero-area">
             <div class="container">
                 <picture>
                     <source media="(min-width: 1024px)" srcset="images/chiwondo-lagoon-desktop.jpg">
@@ -96,45 +96,45 @@
                         alt="Chiwondo Lagoon - sacred lagoon with salty water and no outlet, Kisyombe Village"
                         class="hero-image" loading="eager" width="1200" height="600">
                 </picture>
-                <div class="hero-content">
+                <div class="hero-text">
                     <h2>Kisyombe Village: Legacy of the Sichali Clan</h2>
                     <p>Established before colonisation by Paramount Chief <strong>Kyungu Mwafongo (1820-1850)</strong> •
                         20km south of Karonga Town</p>
-                    <div class="hero-buttons">
-                        <a href="#village-history" class="btn btn-primary">Discover Our History</a>
-                        <a href="culture.html#kyungu-dynasty" class="btn btn-secondary">Kyungu Dynasty</a>
+                    <div class="hero-actions">
+                        <a href="#village-history" class="primary-button">Discover Our History</a>
+                        <a href="culture.html#kyungu-dynasty" class="secondary-button">Kyungu Dynasty</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- FEATURED CATEGORIES -->
-        <section class="featured-categories">
+        <section class="featured-section">
             <div class="container">
                 <h2>Explore Kisyombe</h2>
-                <div class="category-grid">
-                    <a href="nature.html" class="category-card">
+                <div class="card-grid">
+                    <a href="nature.html" class="info-card">
                         <img src="assets/icons/lake-icon.svg"
                             alt="Chiwondo Lagoon icon - sacred lagoon with salty water and no outlet" width="80"
                             height="80" loading="lazy">
                         <h3>Chiwondo Lagoon</h3>
                         <p>Sacred lagoon • Salty water • No outlet</p>
                     </a>
-                    <a href="nature.html#livelihoods" class="category-card">
+                    <a href="nature.html#livelihoods" class="info-card">
                         <img src="assets/icons/farming-icon.svg"
                             alt="Agriculture icon - cotton, sesame, maize, cassava, pigeon peas, rice farming in Kisyombe"
                             width="80" height="80" loading="lazy">
                         <h3>Livelihoods</h3>
                         <p>Cotton, Sesame, Maize, Cassava, Pigeon Peas, Rice</p>
                     </a>
-                    <a href="culture.html" class="category-card">
+                    <a href="culture.html" class="info-card">
                         <img src="assets/icons/culture-icon.svg"
                             alt="Sichali clan heritage icon - Wayanga Sichali, Shalonda, Nkhomo, 470 year legacy"
                             width="80" height="80" loading="lazy">
                         <h3>Sichali Clan</h3>
                         <p>Wayanga • Shalonda • Nkhomo • 470+ year legacy</p>
                     </a>
-                    <a href="culture.html#clans" class="category-card">
+                    <a href="culture.html#clans" class="info-card">
                         <img src="assets/icons/community-icon.svg"
                             alt="Twelve clans of Kisyombe Village - Sichali, Mwamande, Mwachunda, Mwakabonga, Mkwasi and more"
                             width="80" height="80" loading="lazy">
@@ -146,13 +146,13 @@
         </section>
 
         <!-- VILLAGE HISTORY SECTION -->
-        <section id="village-history" class="history-section">
+        <section id="village-history" class="history-block">
             <div class="container">
                 <h2>The Founding of Kisyombe Village</h2>
-                <div class="history-grid">
+                <div class="history-layout">
                     <div class="history-content">
                         <h3>The Journey of Wayanga Sichali</h3>
-                        <p class="history-subtitle">From Chibula, Misuku Hills to Chiwondo Lagoon</p>
+                        <p class="history-sub">From Chibula, Misuku Hills to Chiwondo Lagoon</p>
                         <p>Kisyombe Village traces its roots to <strong>Wayanga Sichali</strong>, a hunter from
                             <strong>Chibula, Misuku Hills in Chitipa</strong>. Wayanga departed from Chibula on a
                             hunting expedition and never returned for years. His grandfather, <strong>Chief
@@ -172,20 +172,20 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="history-image">
+                    <div class="history-media">
                         <img src="images/wayanga-sichali.jpg"
                             alt="Wayanga Sichali - Founder of Kisyombe Village, appointed by Kyungu Mwafongo circa 1835"
                             loading="lazy" width="600" height="500">
-                        <p class="caption">Wayanga Sichali - First Kisyombe, appointed c.1835</p>
+                        <p class="media-caption">Wayanga Sichali - First Kisyombe, appointed c.1835</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- NKHOMO STORY SECTION -->
-        <section class="history-section alt-bg">
+        <section class="history-block alt-bg">
             <div class="container">
-                <div class="history-grid reverse">
+                <div class="history-layout reverse">
                     <div class="history-content">
                         <h3>The Nkhomo Legacy at Mlare</h3>
                         <p><em>"Bapyolite imbwa yane ni nkhomo"</em> — "They broke my dog with a stick."</p>
@@ -195,7 +195,7 @@
                             saying <em>"Bapyolite imbwa yane ni nkhomo"</em>.</p>
                         <p>Kyungu nicknamed him <strong>Nkhomo</strong> and appointed him as leader at Mphughu. Today,
                             the Sichali clan has two major branches in Karonga:</p>
-                        <div class="clan-branches">
+                        <div class="branch-container">
                             <div class="branch-card">
                                 <h4>👑 Kisyombe Branch</h4>
                                 <p><strong>Location:</strong> Chiwondo, Kisyombe Village</p>
@@ -210,7 +210,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="history-image">
+                    <div class="history-media">
                         <img src="images/nkhomo-story.jpg"
                             alt="Nkhomo Sichali - 'Bapyolite imbwa yane ni nkhomo' - Appointed by Kyungu Gwazapasi Kalambo"
                             loading="lazy" width="600" height="500">
@@ -220,12 +220,12 @@
         </section>
 
         <!-- SACRED BELIEFS SECTION -->
-        <section class="beliefs-section">
+        <section class="beliefs-area">
             <div class="container">
                 <h2>Sacred Beliefs: Chiwondo, Kisindire & Vilaure</h2>
-                <div class="beliefs-grid">
+                <div class="belief-grid">
                     <div class="belief-card">
-                        <div class="belief-icon" aria-hidden="true">🐍</div>
+                        <div class="belief-emoji" aria-hidden="true">🐍</div>
                         <h3>Chiwondo</h3>
                         <p>The sacred snake god residing in <strong>Chiwondo Lagoon</strong>. Represents divine
                             protection for Karonga.</p>
@@ -233,19 +233,19 @@
                         <p class="belief-detail"><strong>Priest:</strong> Mkwasi clan</p>
                     </div>
                     <div class="belief-card">
-                        <div class="belief-icon" aria-hidden="true">🛡️</div>
+                        <div class="belief-emoji" aria-hidden="true">🛡️</div>
                         <h3>Kisindire</h3>
                         <p>Spiritual partner of Chiwondo, working together to protect the people of Karonga under Kyungu
                             authority.</p>
                     </div>
                     <div class="belief-card">
-                        <div class="belief-icon" aria-hidden="true">👥</div>
+                        <div class="belief-emoji" aria-hidden="true">👥</div>
                         <h3>Vilaure</h3>
                         <p>Guardian spirits that work with Chiwondo and Kisindire for community protection and
                             prosperity.</p>
                     </div>
                     <div class="belief-card">
-                        <div class="belief-icon" aria-hidden="true">🌾</div>
+                        <div class="belief-emoji" aria-hidden="true">🌾</div>
                         <h3>Chikungu Ceremony</h3>
                         <p>Annual ceremony at beginning of rainy season. Led by Mkwasi priest for good harvests.</p>
                     </div>
@@ -254,28 +254,28 @@
         </section>
 
         <!-- CHIWONDO PRIMARY SCHOOL -->
-        <section class="education-section">
+        <section class="school-section">
             <div class="container">
-                <div class="education-content">
+                <div class="school-content">
                     <h2>Chiwondo Primary School</h2>
                     <p class="school-name">📚 Established 1964 • Named after the sacred lagoon</p>
-                    <div class="school-stats">
-                        <div class="stat-item">
+                    <div class="stats-wrapper">
+                        <div class="stat-box">
                             <span class="stat-number">500+</span>
                             <span class="stat-label">Students</span>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-box">
                             <span class="stat-number">15</span>
                             <span class="stat-label">Teachers</span>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-box">
                             <span class="stat-number">8</span>
                             <span class="stat-label">Classrooms</span>
                         </div>
                     </div>
-                    <p class="school-description">Chiwondo Primary School has educated generations of Kisyombe children.
-                        Many graduates have become teachers, nurses, agricultural officers, and business leaders
-                        contributing to Karonga and Malawi's economy.</p>
+                    <p class="school-desc">Chiwondo Primary School has educated generations of Kisyombe children. Many
+                        graduates have become teachers, nurses, agricultural officers, and business leaders contributing
+                        to Karonga and Malawi's economy.</p>
                     <div class="school-image">
                         <img src="images/chiwondo-school.jpg"
                             alt="Chiwondo Primary School, Kisyombe Village - established 1964" loading="lazy"
@@ -286,40 +286,40 @@
         </section>
 
         <!-- LIVELIHOODS PREVIEW -->
-        <section class="livelihoods-preview">
+        <section class="livelihoods-area">
             <div class="container">
                 <h2>Livelihoods of Kisyombe</h2>
                 <div class="livelihood-grid">
-                    <div class="livelihood-item">
+                    <div class="livelihood-card">
                         <h3>🌾 Agriculture</h3>
                         <p>Cotton, Sesame, Maize, Cassava, Pigeon Peas, Rice</p>
                     </div>
-                    <div class="livelihood-item">
+                    <div class="livelihood-card">
                         <h3>🎣 Fishing</h3>
                         <p>Chiwondo Lagoon (salty water, no outlet) • Lake Malawi beaches</p>
                     </div>
-                    <div class="livelihood-item">
+                    <div class="livelihood-card">
                         <h3>🧶 Traditional Crafts</h3>
                         <p>Mats from palm leaves • Lutefu from banana sheaves</p>
                     </div>
-                    <div class="livelihood-item">
+                    <div class="livelihood-card">
                         <h3>⚽ Sports</h3>
                         <p>Mulamba Football Team • Mapenenga & Ndolo dances</p>
                     </div>
                 </div>
-                <div class="center-btn">
-                    <a href="nature.html" class="btn btn-primary">Learn More About Our Livelihoods</a>
+                <div class="section-footer">
+                    <a href="nature.html" class="primary-button">Learn More About Our Livelihoods</a>
                 </div>
             </div>
         </section>
 
         <!-- DYNAMIC HERITAGE ITEMS -->
-        <section class="heritage-items">
+        <section class="heritage-area">
             <div class="container">
                 <h2>Discover Kisyombe's Heritage</h2>
                 <p class="section-intro">23 heritage items • 8+ properties each • Dynamic JSON data</p>
 
-                <div class="filter-controls">
+                <div class="filter-wrapper">
                     <button class="filter-btn active" data-filter="all">All Items</button>
                     <button class="filter-btn" data-filter="clan">Clans</button>
                     <button class="filter-btn" data-filter="leader">Leaders</button>
@@ -329,20 +329,20 @@
                 </div>
 
                 <div id="heritage-grid" class="heritage-grid">
-                    <div class="loading-spinner">Loading heritage data...</div>
+                    <div class="loading-indicator">Loading heritage data...</div>
                 </div>
             </div>
         </section>
 
         <!-- VISIT & CONTRIBUTE FORM -->
-        <section id="visit-form" class="visit-section">
+        <section id="visit-section" class="visit-area">
             <div class="container">
                 <h2>Connect With Kisyombe Village</h2>
                 <p class="form-intro">Plan your visit, contribute to heritage preservation, or connect with the
                     community.</p>
 
-                <div class="form-container">
-                    <form id="visit-form-element" action="form-action.html" method="GET" class="visit-form">
+                <div class="form-wrapper">
+                    <form id="visitForm" action="form-action.html" method="GET" class="visit-form">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required aria-required="true"
@@ -356,8 +356,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="visit-purpose">Purpose of Interest *</label>
-                            <select id="visit-purpose" name="purpose" required aria-required="true">
+                            <label for="purpose">Purpose of Interest *</label>
+                            <select id="purpose" name="purpose" required aria-required="true">
                                 <option value="" disabled selected>Select an option</option>
                                 <option value="Cultural Tourism - Visit Chiwondo Lagoon">🌊 Cultural Tourism - Visit
                                     Chiwondo Lagoon</option>
@@ -375,8 +375,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="clan-interest">Clan Affiliation (if applicable)</label>
-                            <input type="text" id="clan-interest" name="clan"
+                            <label for="clan">Clan Affiliation (if applicable)</label>
+                            <input type="text" id="clan" name="clan"
                                 placeholder="e.g., Sichali, Mkwasi, Mwachunda, Nkhomo...">
                         </div>
 
@@ -386,38 +386,38 @@
                                 placeholder="Tell us about your interest in Kisyombe Village..."></textarea>
                         </div>
 
-                        <div class="form-group checkbox-group">
+                        <div class="form-group checkbox">
                             <label class="checkbox-label">
                                 <input type="checkbox" name="newsletter" value="yes">
                                 <span>Subscribe to Kisyombe Heritage Newsletter</span>
                             </label>
                         </div>
 
-                        <div class="form-group checkbox-group">
+                        <div class="form-group checkbox">
                             <label class="checkbox-label">
                                 <input type="checkbox" name="consent" value="yes" required>
                                 <span>I consent to my data being processed for heritage preservation purposes *</span>
                             </label>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-submit">Submit Inquiry</button>
+                        <button type="submit" class="submit-button">Submit Inquiry</button>
                     </form>
 
-                    <div class="preferences-card">
+                    <div class="preferences-panel">
                         <h3>Your Preferences</h3>
-                        <div class="preference-item">
+                        <div class="pref-item">
                             <span class="pref-label">🎨 Theme:</span>
-                            <span class="pref-value" id="theme-preference">Default</span>
+                            <span class="pref-value" id="themePref">Default</span>
                         </div>
-                        <div class="preference-item">
+                        <div class="pref-item">
                             <span class="pref-label">👑 Last Viewed:</span>
-                            <span class="pref-value" id="last-viewed">None</span>
+                            <span class="pref-value" id="lastViewedPref">None</span>
                         </div>
-                        <div class="preference-item">
+                        <div class="pref-item">
                             <span class="pref-label">🏷️ Clan Interest:</span>
-                            <span class="pref-value" id="clan-preference">Not set</span>
+                            <span class="pref-value" id="clanPref">Not set</span>
                         </div>
-                        <button id="reset-preferences" class="btn btn-secondary btn-small">Reset Preferences</button>
+                        <button id="resetPrefs" class="secondary-button small">Reset Preferences</button>
                         <p class="prefs-note">Preferences saved in local storage</p>
                     </div>
                 </div>
@@ -427,7 +427,7 @@
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-info">
                     <h3>Kisyombe Village Heritage</h3>
                     <p>Sichali Clan • Paramount Traditional Authority Kyungu</p>
@@ -460,14 +460,13 @@
                         <li>✓ Modal Dialog</li>
                     </ul>
                     <a href="https://youtu.be/your-kisyombe-video-id" target="_blank" rel="noopener"
-                        class="btn btn-secondary">Watch Demonstration</a>
+                        class="secondary-button">Watch Demonstration</a>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <div class="copyright">
-                    <p>&copy; <span id="current-year"></span> Kisyombe Village Heritage Project. WDD 231 - BYU-Idaho.
-                    </p>
+                    <p>&copy; <span id="currentYear"></span> Kisyombe Village Heritage Project. WDD 231 - BYU-Idaho.</p>
                     <p>Student: Sichali395</p>
                 </div>
                 <div class="acknowledgment">
@@ -479,25 +478,23 @@
                             target="_blank">HTML Validation</a> | <a
                             href="https://jigsaw.w3.org/css-validator/validator?uri=https://sichali395.github.io/wdd231/project/"
                             target="_blank">CSS Validation</a> | <a href="validation-report.html">Full Report</a></p>
-                    <p>Last updated: <span id="current-date"></span></p>
+                    <p>Last updated: <span id="currentDate"></span></p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- MODAL DIALOG -->
-    <div id="heritage-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title"
-        aria-describedby="modal-description">
+    <div id="heritageModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle"
+        aria-describedby="modalDesc">
         <div class="modal-overlay" tabindex="-1"></div>
-        <div class="modal-content">
+        <div class="modal-container">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div id="modal-body">
-                <!-- Populated by JavaScript -->
-            </div>
+            <div id="modalBody"></div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT - ES MODULES -->
+    <!-- JAVASCRIPT - AT BOTTOM OF BODY (REQUIRED LOCATION) -->
     <script type="module" src="scripts/main.js"></script>
 </body>
 

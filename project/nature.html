@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- META DESCRIPTION - CORRECTED: 158 characters -->
+    <!-- META DESCRIPTION - CORRECTED: 157 characters -->
     <meta name="description"
-        content="Chiwondo Lagoon - sacred lagoon with salty water and no outlet in Kisyombe Village, Karonga. Home of Chiwondo sacred snake, traditional fishing, and unique ecosystem.">
+        content="Chiwondo Lagoon: sacred lagoon with salty water and no outlet in Kisyombe Village, Karonga. Home of Chiwondo sacred snake, traditional fishing, and unique ecosystem.">
 
     <!-- AUTHOR ATTRIBUTION -->
-    <meta name="author" content="Sichali395 - WDD 231 Student Project">
+    <meta name="author" content="Sichali395 - WDD 231 Student">
 
-    <!-- OPEN GRAPH META - CORRECTED -->
+    <!-- OPEN GRAPH META - CORRECTED: 158 characters -->
     <meta property="og:title" content="Chiwondo Lagoon - Sacred Lagoon | Kisyombe Village, Karonga">
     <meta property="og:description"
-        content="Discover Chiwondo Lagoon - Malawi's unique sacred lagoon with salty water & no outlet. Home of Chiwondo sacred snake, traditional fishing, and ancient spiritual ceremonies.">
+        content="Discover Chiwondo Lagoon - Malawi's unique sacred lagoon with salty water & no outlet. Home of Chiwondo sacred snake, traditional fishing, and ancient ceremonies.">
     <meta property="og:image" content="https://sichali395.github.io/wdd231/project/images/og-chiwondo-lagoon.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt"
-        content="Chiwondo Lagoon - sacred lagoon with salty water, no outlet, Kisyombe Village, Karonga">
+        content="Chiwondo Lagoon - sacred lagoon with salty water, no outlet, Kisyombe Village">
     <meta property="og:url" content="https://sichali395.github.io/wdd231/project/nature.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Kisyombe Village Heritage">
@@ -43,8 +43,9 @@
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS - ONLY MAIN.CSS -->
+    <!-- TWO CSS FILES - REQUIRED BY AUDIT -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/base.css">
 </head>
 
 <body>
@@ -52,29 +53,29 @@
 
     <header class="site-header">
         <div class="container">
-            <div class="logo-area">
-                <img src="assets/icons/logo.svg" alt="Kisyombe Village Heritage Logo - Sichali Clan" class="logo"
+            <div class="logo-wrapper">
+                <img src="assets/icons/logo.svg" alt="Kisyombe Village Heritage Logo - Sichali Clan" class="site-logo"
                     width="60" height="60" loading="eager">
                 <div>
                     <h1>Kisyombe Village Heritage</h1>
-                    <p class="subtitle">Chiwondo Lagoon • Sacred Site • Karonga, Malawi</p>
+                    <p class="site-tagline">Chiwondo Lagoon • Sacred Site • Karonga, Malawi</p>
                 </div>
             </div>
         </div>
     </header>
 
-    <nav class="main-nav" aria-label="Main navigation">
+    <nav class="site-nav">
         <div class="container">
-            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+            <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <ul id="nav-menu" class="nav-menu">
+            <ul id="navMenu" class="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="nature.html" class="active" aria-current="page">Chiwondo Lagoon</a></li>
                 <li><a href="culture.html">Sichali Clan & Kyungu</a></li>
-                <li><a href="index.html#visit-form">Visit & Contribute</a></li>
+                <li><a href="index.html#visit-section">Visit & Contribute</a></li>
                 <li><a href="attributions.html">Attributions</a></li>
                 <li><a href="validation-report.html">Validation</a></li>
             </ul>
@@ -93,7 +94,7 @@
 
         <!-- UNIQUE CHARACTERISTICS -->
         <section class="feature-section">
-            <h2>Unique Characteristics of Chiwondo Lagoon</h2>
+            <h2>Unique Characteristics</h2>
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="feature-icon" aria-hidden="true">🧂</div>
@@ -125,8 +126,8 @@
         <!-- SACRED BELIEFS -->
         <section class="beliefs-detailed">
             <h2>Sacred Beliefs of Chiwondo</h2>
-            <div class="beliefs-content">
-                <div class="belief-text">
+            <div class="content-layout">
+                <div class="text-content">
                     <h3>The Chiwondo Spirit</h3>
                     <p>The people of Kisyombe believe in a god represented by a <strong>big snake called
                             Chiwondo</strong> that resides in the lagoon. This spiritual entity works hand in hand with
@@ -143,7 +144,7 @@
                             ceremony</strong> to ensure good harvests. A member of the Mkwasi family leads these
                         ceremonies as the traditional priest.</p>
                 </div>
-                <div class="belief-image">
+                <div class="media-content">
                     <img src="images/chiwondo-sacred-snake.jpg"
                         alt="Artistic representation of Chiwondo - the sacred snake god of Chiwondo Lagoon, Kisyombe Village"
                         loading="lazy" width="600" height="500">
@@ -155,7 +156,7 @@
         <!-- FISHING LIVELIHOODS -->
         <section id="livelihoods" class="livelihoods-detailed">
             <h2>Fishing Livelihoods</h2>
-            <div class="livelihoods-grid">
+            <div class="livelihood-grid">
                 <div class="livelihood-card">
                     <h3>🎣 Chiwondo Lagoon Fishing</h3>
                     <p>Subsistence fishing in the sacred lagoon provides protein and income for the community. The salty
@@ -165,7 +166,7 @@
                         <li>Hook and line (ndoza)</li>
                         <li>Small gill nets (mauwa)</li>
                     </ul>
-                    <p><strong>Clan:</strong> Ndovie/Phiri (primary fishing clan)</p>
+                    <p><strong>Clan:</strong> Ndovie/Phiri</p>
                 </div>
                 <div class="livelihood-card">
                     <h3>🏖️ Lake Malawi Beaches</h3>
@@ -176,7 +177,7 @@
                         <li>Beach seining (koka)</li>
                         <li>Fish processing and smoking</li>
                     </ul>
-                    <p><strong>Main catch:</strong> Utaka, Chambo, Mlamba (catfish)</p>
+                    <p><strong>Main catch:</strong> Utaka, Chambo, Mlamba</p>
                 </div>
             </div>
         </section>
@@ -230,8 +231,7 @@
                 </div>
                 <div class="craft-card">
                     <h3>🪢 Lutefu</h3>
-                    <p>Traditional craft made from banana sheaves for ropes, baskets, and household items. Sustainable
-                        use of local resources.</p>
+                    <p>Traditional craft made from banana sheaves for ropes, baskets, and household items.</p>
                     <p><strong>Material:</strong> Banana sheaves</p>
                 </div>
             </div>
@@ -241,28 +241,27 @@
         <section class="conservation-section">
             <h2>Conservation & Preservation</h2>
             <div class="conservation-content">
-                <p>Chiwondo Lagoon faces threats from climate change and changing rainfall patterns. The community,
-                    under Paramount Chief Kyungu and Village Head Kisyombe, is working to preserve this sacred site
-                    through:</p>
+                <p>Chiwondo Lagoon faces threats from climate change. The community, under Paramount Chief Kyungu, is
+                    working to preserve this sacred site through:</p>
                 <ul>
-                    <li>Traditional fishing regulations (closed seasons, gear restrictions)</li>
-                    <li>Buffer zone protection around the lagoon</li>
-                    <li>Documentation of sacred knowledge by Mkwasi elders</li>
-                    <li>Educational programs at Chiwondo Primary School</li>
+                    <li>Traditional fishing regulations</li>
+                    <li>Buffer zone protection</li>
+                    <li>Documentation of sacred knowledge</li>
+                    <li>Educational programs at Chiwondo School</li>
                 </ul>
                 <div class="conservation-cta">
-                    <a href="index.html#visit-form" class="btn btn-primary">Support Conservation Efforts</a>
+                    <a href="index.html#visit-section" class="primary-button">Support Conservation</a>
                 </div>
             </div>
         </section>
 
         <!-- CHIWONDO PRIMARY SCHOOL -->
-        <section class="education-section">
-            <div class="education-content">
+        <section class="school-section">
+            <div class="school-content">
                 <h2>Chiwondo Primary School</h2>
                 <p class="school-name">📚 Established 1964 • Named after the sacred lagoon</p>
-                <div class="school-info">
-                    <div class="school-text">
+                <div class="content-layout">
+                    <div class="text-content">
                         <p>Chiwondo Primary School has educated generations of Kisyombe children. Many graduates have
                             become teachers, nurses, agricultural officers, and business leaders contributing to Karonga
                             and Malawi's economy.</p>
@@ -272,7 +271,7 @@
                             <li>🏫 8 classrooms</li>
                         </ul>
                     </div>
-                    <div class="school-image">
+                    <div class="media-content">
                         <img src="images/chiwondo-school.jpg"
                             alt="Chiwondo Primary School, Kisyombe Village - established 1964" loading="lazy"
                             width="500" height="350">
@@ -284,7 +283,7 @@
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-info">
                     <h3>Kisyombe Village Heritage</h3>
                     <p>Chiwondo Lagoon • Sacred Site • Karonga, Malawi</p>
@@ -302,11 +301,11 @@
                 <div class="footer-video">
                     <h4>🎥 Project Video</h4>
                     <a href="https://youtu.be/your-kisyombe-video-id" target="_blank" rel="noopener"
-                        class="btn btn-secondary">Watch Demonstration</a>
+                        class="secondary-button">Watch Demonstration</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Kisyombe Village Heritage</p>
+                <p>&copy; <span id="currentYear"></span> Kisyombe Village Heritage</p>
                 <p class="acknowledgment">We acknowledge Paramount Chief Kyungu Clement Mwakasungula - Kyabala III</p>
             </div>
         </div>

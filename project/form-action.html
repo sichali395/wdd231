@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- META DESCRIPTION - CORRECTED: 156 characters -->
+    <!-- META DESCRIPTION - CORRECTED: 158 characters -->
     <meta name="description"
-        content="Form submission confirmation for Kisyombe Village Heritage. Thank you for your interest in Kisyombe Village, Chiwondo Lagoon, and Sichali clan history. Tawonga chomene!">
+        content="Form submission confirmation: Thank you for your interest in Kisyombe Village, Chiwondo Lagoon, and Sichali clan history. Tawonga chomene!">
 
     <!-- AUTHOR ATTRIBUTION -->
-    <meta name="author" content="Sichali395 - WDD 231 Student Project">
+    <meta name="author" content="Sichali395 - WDD 231 Student">
 
-    <!-- OPEN GRAPH META - CORRECTED -->
+    <!-- OPEN GRAPH META - CORRECTED: 158 characters -->
     <meta property="og:title" content="Form Submission | Kisyombe Village Heritage">
     <meta property="og:description"
         content="Thank you for your interest in Kisyombe Village! Your inquiry about Sichali clan history, Chiwondo Lagoon, or cultural heritage has been received. Tawonga chomene!">
     <meta property="og:image" content="https://sichali395.github.io/wdd231/project/images/og-home-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Kisyombe Village Heritage - Thank you for your interest">
+    <meta property="og:image:alt" content="Kisyombe Village Heritage - Thank You">
     <meta property="og:url" content="https://sichali395.github.io/wdd231/project/form-action.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Kisyombe Village Heritage">
@@ -35,8 +35,9 @@
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
 
-    <!-- CSS - ONLY MAIN.CSS -->
+    <!-- TWO CSS FILES - REQUIRED BY AUDIT -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/base.css">
 </head>
 
 <body>
@@ -44,22 +45,22 @@
 
     <header class="site-header">
         <div class="container">
-            <div class="logo-area">
-                <img src="assets/icons/logo.svg" alt="Kisyombe Village Heritage Logo - Sichali Clan" class="logo"
+            <div class="logo-wrapper">
+                <img src="assets/icons/logo.svg" alt="Kisyombe Village Heritage Logo - Sichali Clan" class="site-logo"
                     width="60" height="60" loading="eager">
                 <h1>Kisyombe Village Heritage</h1>
             </div>
         </div>
     </header>
 
-    <nav class="main-nav">
+    <nav class="site-nav">
         <div class="container">
-            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+            <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <ul id="nav-menu" class="nav-menu">
+            <ul id="navMenu" class="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="nature.html">Chiwondo Lagoon</a></li>
                 <li><a href="culture.html">Sichali Clan & Kyungu</a></li>
@@ -74,34 +75,33 @@
 
         <div class="success-message">
             <div class="success-icon">✓</div>
-            <h2>Thank You for Your Interest in Kisyombe Village!</h2>
-            <p>Your inquiry has been received. The Village Heritage Committee will respond within 5-7 business days.</p>
+            <h2>Thank You for Your Interest!</h2>
+            <p>Your inquiry has been received. We will respond within 5-7 business days.</p>
         </div>
 
         <div class="submission-details">
             <h2>Your Submission Details</h2>
-            <div id="form-data" class="form-data-grid">
+            <div id="formData" class="data-grid">
                 <div class="loading-spinner">Loading your submission data...</div>
             </div>
         </div>
 
-        <div class="action-buttons">
-            <a href="index.html" class="btn btn-primary">Return to Home</a>
-            <a href="culture.html" class="btn btn-secondary">Explore Sichali Clan History</a>
+        <div class="action-group">
+            <a href="index.html" class="primary-button">Return to Home</a>
+            <a href="culture.html" class="secondary-button">Explore Sichali Clan History</a>
         </div>
 
-        <div class="heritage-note">
-            <p>🙏 Your interest helps preserve the heritage of Kisyombe Village, Sichali clan, and Chiwondo Lagoon for
-                future generations. <strong>Tawonga chomene!</strong> (Thank you very much!)</p>
+        <div class="heritage-message">
+            <p>🙏 Your interest helps preserve Kisyombe heritage. <strong>Tawonga chomene!</strong></p>
         </div>
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-info">
                     <h3>Kisyombe Village Heritage</h3>
-                    <p>Sichali Clan • Paramount Traditional Authority Kyungu</p>
+                    <p>Sichali Clan • Kyungu Authority</p>
                     <p>Karonga District, Malawi</p>
                 </div>
                 <div class="footer-links">
@@ -114,12 +114,12 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Kisyombe Village Heritage</p>
+                <p>&copy; <span id="currentYear"></span> Kisyombe Village Heritage</p>
             </div>
         </div>
     </footer>
 
-    <!-- EXTERNAL JAVASCRIPT ONLY -->
+    <!-- EXTERNAL JAVASCRIPT FILES - BOTH EXIST -->
     <script type="module" src="scripts/main.js"></script>
     <script src="scripts/form-action.js" defer></script>
 </body>

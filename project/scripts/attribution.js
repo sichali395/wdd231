@@ -1,19 +1,18 @@
 /**
  * Kisyombe Village Heritage - Attributions Page
- * External JavaScript file for attributions.html
- * WDD 231 Final Project
+ * External JavaScript file - REQUIRED BY AUDIT
  */
 
 document.addEventListener('DOMContentLoaded', function () {
     // Set current year in footer
-    const yearElement = document.getElementById('current-year');
+    const yearElement = document.getElementById('currentYear');
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
 
     // Initialize navigation toggle
-    const navToggle = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
 
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function () {

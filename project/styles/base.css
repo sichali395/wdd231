@@ -1,0 +1,82 @@
+/**
+ * Kisyombe Village Heritage - Base Styles
+ * Secondary CSS file required by audit
+ * WDD 231 Final Project
+ */
+
+/* ===== BASE RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== ACCESSIBILITY ===== */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #2E5E4E;
+    color: white;
+    padding: 8px 16px;
+    z-index: 1000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid #D4A55A;
+}
+
+/* ===== TYPOGRAPHY ===== */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background: white;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #2E5E4E;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ===== IMAGES ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+
+    .nav-menu,
+    .hero-content,
+    .btn,
+    .footer-video,
+    .modal {
+        display: none !important;
+    }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

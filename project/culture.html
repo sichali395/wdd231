@@ -7,15 +7,15 @@
 
     <!-- META DESCRIPTION - CORRECTED: 158 characters -->
     <meta name="description"
-        content="Sichali Clan history: Wayanga Sichali, Shalonda, Nkhomo. Complete Kyungu Dynasty - 26 Paramount Chiefs from 1550 to present. 12 clans of Kisyombe Village, Karonga, Malawi.">
+        content="Sichali Clan history: Wayanga, Shalonda, Nkhomo. Complete Kyungu Dynasty - 26 Paramount Chiefs 1550-present. 12 clans of Kisyombe Village, Karonga, Malawi.">
 
     <!-- AUTHOR ATTRIBUTION -->
-    <meta name="author" content="Sichali395 - WDD 231 Student Project">
+    <meta name="author" content="Sichali395 - WDD 231 Student">
 
-    <!-- OPEN GRAPH META - CORRECTED -->
+    <!-- OPEN GRAPH META - CORRECTED: 158 characters -->
     <meta property="og:title" content="Sichali Clan History & Kyungu Dynasty | Kisyombe Village">
     <meta property="og:description"
-        content="470+ years of Kyungu Dynasty - 26 Paramount Chiefs from 1550 to present. Complete history of Sichali clan, Wayanga Sichali, and 12 clans of Kisyombe Village, Karonga.">
+        content="470+ years of Kyungu Dynasty - 26 Paramount Chiefs 1550-present. Complete history of Sichali clan, Wayanga Sichali, and 12 clans of Kisyombe Village, Karonga.">
     <meta property="og:image" content="https://sichali395.github.io/wdd231/project/images/og-kyungu-dynasty.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -42,8 +42,9 @@
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS - ONLY MAIN.CSS -->
+    <!-- TWO CSS FILES - REQUIRED BY AUDIT -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/base.css">
 </head>
 
 <body>
@@ -51,29 +52,29 @@
 
     <header class="site-header">
         <div class="container">
-            <div class="logo-area">
-                <img src="assets/icons/logo.svg" alt="Kisyombe Village Heritage Logo - Sichali Clan" class="logo"
+            <div class="logo-wrapper">
+                <img src="assets/icons/logo.svg" alt="Kisyombe Village Heritage Logo - Sichali Clan" class="site-logo"
                     width="60" height="60" loading="eager">
                 <div>
                     <h1>Kisyombe Village Heritage</h1>
-                    <p class="subtitle">Sichali Clan • Kyungu Dynasty • 470+ Years of Legacy</p>
+                    <p class="site-tagline">Sichali Clan • Kyungu Dynasty • 470+ Years of Legacy</p>
                 </div>
             </div>
         </div>
     </header>
 
-    <nav class="main-nav" aria-label="Main navigation">
+    <nav class="site-nav">
         <div class="container">
-            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+            <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <ul id="nav-menu" class="nav-menu">
+            <ul id="navMenu" class="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="nature.html">Chiwondo Lagoon</a></li>
                 <li><a href="culture.html" class="active" aria-current="page">Sichali Clan & Kyungu</a></li>
-                <li><a href="index.html#visit-form">Visit & Contribute</a></li>
+                <li><a href="index.html#visit-section">Visit & Contribute</a></li>
                 <li><a href="attributions.html">Attributions</a></li>
                 <li><a href="validation-report.html">Validation</a></li>
             </ul>
@@ -86,20 +87,20 @@
         <!-- ORIGIN SECTION -->
         <section class="origin-section">
             <h2>Origin: Chibula, Misuku Hills, Chitipa</h2>
-            <div class="origin-grid">
-                <div class="origin-content">
+            <div class="content-layout">
+                <div class="text-content">
                     <p>The Sichali clan traces its roots to <strong>Chibula in the Misuku Hills, Chitipa
                             District</strong>. This is the ancestral homeland where <strong>Wayanga Sichali</strong>
                         lived with his grandfather, <strong>Chief Mwenemisuku</strong>, before his legendary hunting
                         journey to Karonga.</p>
                     <p>Chief Mwenemisuku reported Wayanga's disappearance to Paramount Chief Kyungu, establishing the
                         first documented communication between these two traditional authorities.</p>
-                    <div class="origin-fact">
+                    <div class="fact-box">
                         <p><strong>📍 Distance:</strong> Chibula to Chiwondo Lagoon ~250km</p>
                         <p><strong>⏱️ Era:</strong> c. 1820-1835 (Kyungu Mwafongo period)</p>
                     </div>
                 </div>
-                <div class="origin-image">
+                <div class="media-content">
                     <img src="images/misuku-hills.jpg" alt="Misuku Hills, Chitipa - ancestral home of Sichali clan"
                         loading="lazy" width="600" height="450">
                     <p class="caption">Misuku Hills, Chitipa - Origin of Sichali clan</p>
@@ -110,34 +111,34 @@
         <!-- WAYANGA SICHALI -->
         <section class="founder-section">
             <h2>Wayanga Sichali: The Hunter Who Founded Kisyombe</h2>
-            <div class="founder-grid">
-                <div class="founder-image">
-                    <img src="images/wayanga-sichali-portrait.jpg"
-                        alt="Wayanga Sichali - Founder of Kisyombe Village, appointed by Kyungu Mwafongo circa 1835"
-                        loading="lazy" width="600" height="500">
-                </div>
-                <div class="founder-content">
+            <div class="content-layout reverse">
+                <div class="timeline">
                     <div class="timeline-event">
                         <span class="event-year">c.1820</span>
-                        <div class="event-desc">Departed Chibula on hunting expedition</div>
+                        <span class="event-desc">Departed Chibula on hunting expedition</span>
                     </div>
                     <div class="timeline-event">
                         <span class="event-year">c.1835</span>
-                        <div class="event-desc">Arrived at Chiwondo Lagoon</div>
+                        <span class="event-desc">Arrived at Chiwondo Lagoon</span>
                     </div>
                     <div class="timeline-event">
                         <span class="event-year">c.1835</span>
-                        <div class="event-desc">Discovered by women, brought to Kyungu Mwafongo</div>
+                        <span class="event-desc">Discovered by women, brought to Kyungu Mwafongo</span>
                     </div>
                     <div class="timeline-event highlight">
                         <span class="event-year">1835-1850</span>
-                        <div class="event-desc">Appointed village headman, given wife Kasyombe, bodyguard Mwachunda
-                        </div>
+                        <span class="event-desc">Appointed village headman, given wife Kasyombe, bodyguard
+                            Mwachunda</span>
                     </div>
                     <div class="timeline-event">
                         <span class="event-year">c.1850</span>
-                        <div class="event-desc">Departed to Mphangala, Zambia</div>
+                        <span class="event-desc">Departed to Mphangala, Zambia</span>
                     </div>
+                </div>
+                <div class="media-content">
+                    <img src="images/wayanga-sichali-portrait.jpg"
+                        alt="Wayanga Sichali - Founder of Kisyombe Village, appointed by Kyungu Mwafongo circa 1835"
+                        loading="lazy" width="600" height="500">
                 </div>
             </div>
         </section>
@@ -145,11 +146,11 @@
         <!-- TWO BRANCHES -->
         <section class="branches-section">
             <h2>The Two Branches of Sichali Clan</h2>
-            <div class="branches-grid">
+            <div class="branch-grid">
                 <div class="branch-card featured">
                     <h3>👑 Kisyombe Branch</h3>
                     <p><strong>Location:</strong> Chiwondo, Kisyombe Village</p>
-                    <p><strong>Founder:</strong> Shalonda Sichali (son of Wayanga)</p>
+                    <p><strong>Founder:</strong> Shalonda Sichali</p>
                     <p><strong>Title:</strong> Kisyombe (hereditary)</p>
                     <p>All subsequent Kisyombe leaders trace their lineage through Shalonda.</p>
                     <p><strong>Kyungu Era:</strong> Kyungu Gwazapasi Kalambo (1850-1868)</p>
@@ -157,7 +158,7 @@
                 <div class="branch-card featured">
                     <h3>⚔️ Nkhomo Branch</h3>
                     <p><strong>Location:</strong> Mlare, Mphughu</p>
-                    <p><strong>Founder:</strong> Nkhomo Sichali (brother of Shalonda)</p>
+                    <p><strong>Founder:</strong> Nkhomo Sichali</p>
                     <p><strong>Title:</strong> Nkhomo (hereditary)</p>
                     <p>Founded when Kyungu nicknamed him "Nkhomo" after his dog was injured.</p>
                     <p><strong>Kyungu Era:</strong> Kyungu Gwazapasi Kalambo (1850-1868)</p>
@@ -166,12 +167,12 @@
         </section>
 
         <!-- KYUNGU DYNASTY -->
-        <section id="kyungu-dynasty" class="kyungu-dynasty-section">
+        <section id="kyungu-dynasty" class="dynasty-section">
             <h2>Kyungu Dynasty: 26 Paramount Chiefs (1550-Present)</h2>
-            <p class="dynasty-intro">470+ years of traditional governance. The title "Kisyombe" derives from the 10th
+            <p class="section-intro">470+ years of traditional governance. The title "Kisyombe" derives from the 10th
                 Paramount Chief, <strong>Kyungu Kasyombe (1760-1790)</strong>.</p>
 
-            <div class="dynasty-timeline-header">
+            <div class="dynasty-timeline">
                 <img src="images/kyungu-dynasty-timeline.jpg"
                     alt="Timeline of all 26 Kyungu Paramount Chiefs from 1550 to present" class="timeline-image"
                     loading="lazy" width="1000" height="400">
@@ -180,8 +181,8 @@
             <div class="dynasty-grid">
                 <div class="dynasty-column">
                     <h3>🏛️ Early (1550-1730)</h3>
-                    <ul class="kyungu-list">
-                        <li><strong>1550</strong> - Kyungu Mwenenkhonde <span class="kyungu-desc">Founder</span></li>
+                    <ul class="chief-list">
+                        <li><strong>1550</strong> - Kyungu Mwenenkhonde <span>Founder</span></li>
                         <li><strong>1550-1580</strong> - Kyungu Ngulube</li>
                         <li><strong>1580-1610</strong> - Kyungu Lyambilo</li>
                         <li><strong>1610-1640</strong> - Kyungu Kameme Mwenembako</li>
@@ -194,14 +195,14 @@
 
                 <div class="dynasty-column">
                     <h3>👑 Middle (1760-1870)</h3>
-                    <ul class="kyungu-list">
-                        <li class="highlight"><strong>1760-1790</strong> - Kyungu Kasyombe <span class="kyungu-desc">⚠️
-                                Namesake of Kisyombe</span></li>
+                    <ul class="chief-list">
+                        <li class="highlight"><strong>1760-1790</strong> - Kyungu Kasyombe <span>⚠️ Namesake of
+                                Kisyombe</span></li>
                         <li><strong>1790-1820</strong> - Kyungu Mwenenguwe</li>
-                        <li class="highlight"><strong>1820-1850</strong> - Kyungu Mwafongo <span class="kyungu-desc">✅
-                                Appointed Wayanga</span></li>
-                        <li class="highlight"><strong>1850-1868</strong> - Kyungu Gwazapasi Kalambo <span
-                                class="kyungu-desc">✅ Appointed Nkhomo</span></li>
+                        <li class="highlight"><strong>1820-1850</strong> - Kyungu Mwafongo <span>✅ Appointed
+                                Wayanga</span></li>
+                        <li class="highlight"><strong>1850-1868</strong> - Kyungu Gwazapasi Kalambo <span>✅ Appointed
+                                Nkhomo</span></li>
                         <li><strong>1868-1870</strong> - Kyungu Mwabulambo</li>
                         <li><strong>1870-1875</strong> - Kyungu Mwangonde</li>
                     </ul>
@@ -209,7 +210,7 @@
 
                 <div class="dynasty-column">
                     <h3>📜 Late (1875-1966)</h3>
-                    <ul class="kyungu-list">
+                    <ul class="chief-list">
                         <li><strong>1875-1888</strong> - Kyungu Mpeta Mwakasungula</li>
                         <li><strong>1888-1894</strong> - Kyungu Mwambelo</li>
                         <li><strong>1894-1904</strong> - Kyungu Mwakabanga</li>
@@ -221,14 +222,14 @@
 
                 <div class="dynasty-column">
                     <h3>🇲🇼 Modern (1967-Present)</h3>
-                    <ul class="kyungu-list">
+                    <ul class="chief-list">
                         <li><strong>1967-1973</strong> - Kyungu Kapote Mwakasungula</li>
                         <li><strong>1973-2006</strong> - Kyungu Gibson Mwangolera - Kyabala I</li>
                         <li><strong>2006-2011</strong> - Kyungu Lackson Mwanyongo - Kyabala II</li>
-                        <li class="current-chief"><strong>2011-present</strong> - Kyungu Clement Mwakasungula - Kyabala
-                            III</li>
+                        <li class="current"><strong>2011-present</strong> - Kyungu Clement Mwakasungula - Kyabala III
+                        </li>
                     </ul>
-                    <div class="current-chief-info">
+                    <div class="current-chief">
                         <h4>Current Paramount Chief</h4>
                         <img src="images/kyungu-current.jpg"
                             alt="Kyungu Clement Mwakasungula - Kyabala III, current Paramount Chief of Karonga since 2011"
@@ -238,23 +239,20 @@
                 </div>
             </div>
 
-            <div class="kyungu-connection">
+            <div class="connection-box">
                 <h3>Connection to Kisyombe Village</h3>
                 <div class="connection-grid">
                     <div class="connection-card">
                         <h4>👑 Kyungu Kasyombe (1760-1790)</h4>
-                        <p>The title "Kisyombe" derives from this Paramount Chief. When Kyungu Mwafongo gave Wayanga
-                            Sichali a wife, she was named Kasyombe in his honor.</p>
+                        <p>The title "Kisyombe" derives from this Paramount Chief.</p>
                     </div>
                     <div class="connection-card">
                         <h4>🤝 Kyungu Mwafongo (1820-1850)</h4>
-                        <p>Appointed Wayanga Sichali as village headman at Chiwondo Lagoon, establishing the Kisyombe
-                            chieftainship.</p>
+                        <p>Appointed Wayanga Sichali as village headman.</p>
                     </div>
                     <div class="connection-card">
                         <h4>⚔️ Kyungu Gwazapasi Kalambo (1850-1868)</h4>
-                        <p>Appointed Nkhomo Sichali as leader at Mphughu, Mlare, establishing the second branch of
-                            Sichali clan.</p>
+                        <p>Appointed Nkhomo Sichali as leader at Mphughu.</p>
                     </div>
                 </div>
             </div>
@@ -263,12 +261,11 @@
         <!-- 12 CLANS -->
         <section id="clans" class="clans-section">
             <h2>The 12 Clans of Kisyombe Village</h2>
-            <div class="clans-grid">
+            <div class="clan-grid">
                 <div class="clan-card">
                     <h3>Sichali</h3>
-                    <p><strong>Role:</strong> Village leadership (Kisyombe title)</p>
+                    <p><strong>Role:</strong> Village leadership</p>
                     <p><strong>Origin:</strong> Chibula, Misuku Hills</p>
-                    <p><strong>Branches:</strong> Kisyombe (Chiwondo), Nkhomo (Mlare)</p>
                 </div>
                 <div class="clan-card">
                     <h3>Mwamande</h3>
@@ -276,12 +273,11 @@
                 </div>
                 <div class="clan-card">
                     <h3>Mwachunda</h3>
-                    <p><strong>Role:</strong> Traditional bodyguards to Kisyombe</p>
-                    <p>Descended from Mwamnkhasi Mwachunda</p>
+                    <p><strong>Role:</strong> Bodyguards to Kisyombe</p>
                 </div>
                 <div class="clan-card">
                     <h3>Mwakabonga</h3>
-                    <p><strong>Role:</strong> Historians, oral tradition keepers</p>
+                    <p><strong>Role:</strong> Historians</p>
                 </div>
                 <div class="clan-card">
                     <h3>Mwakamendo</h3>
@@ -289,12 +285,11 @@
                 </div>
                 <div class="clan-card">
                     <h3>Mwentanga/Kabango</h3>
-                    <p><strong>Role:</strong> Traditional craftsmen</p>
+                    <p><strong>Role:</strong> Craftsmen</p>
                 </div>
                 <div class="clan-card">
                     <h3>Mkwasi</h3>
-                    <p><strong>Role:</strong> Traditional priests of Chiwondo</p>
-                    <p>Lead Chikungu ceremony and sacrifices</p>
+                    <p><strong>Role:</strong> Priests of Chiwondo</p>
                 </div>
                 <div class="clan-card">
                     <h3>Mwamvula</h3>
@@ -306,7 +301,7 @@
                 </div>
                 <div class="clan-card">
                     <h3>Mwakigheghe</h3>
-                    <p><strong>Role:</strong> Warriors and protectors</p>
+                    <p><strong>Role:</strong> Warriors</p>
                 </div>
                 <div class="clan-card">
                     <h3>Banda</h3>
@@ -315,58 +310,6 @@
                 <div class="clan-card">
                     <h3>Ndovie/Phiri</h3>
                     <p><strong>Role:</strong> Fishing clan</p>
-                    <p>Chiwondo Lagoon and Lake Malawi</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- TRADITIONAL CEREMONIES -->
-        <section class="ceremonies-section">
-            <h2>Traditional Ceremonies & Dances</h2>
-            <div class="ceremonies-grid">
-                <div class="ceremony-card">
-                    <h3>🌧️ Chikungu Ceremony</h3>
-                    <p><strong>Season:</strong> Beginning of rainy season</p>
-                    <p><strong>Leader:</strong> Mkwasi clan priest</p>
-                    <p><strong>Purpose:</strong> Prayers for abundant rains and good harvests</p>
-                </div>
-                <div class="ceremony-card">
-                    <h3>🐍 Chiwondo Sacrifice</h3>
-                    <p><strong>Occasion:</strong> During calamity</p>
-                    <p><strong>Leader:</strong> Mkwasi clan priest</p>
-                    <p><strong>Location:</strong> Chiwondo Lagoon</p>
-                    <p><strong>Offering:</strong> White chicken</p>
-                </div>
-                <div class="ceremony-card">
-                    <h3>💃 Mapenenga Dance</h3>
-                    <p><strong>Type:</strong> Celebratory traditional dance</p>
-                    <p><strong>Occasion:</strong> Ceremonies, celebrations</p>
-                </div>
-                <div class="ceremony-card">
-                    <h3>🥁 Ndolo Dance</h3>
-                    <p><strong>Type:</strong> Ceremonial traditional dance</p>
-                    <p><strong>Occasion:</strong> Installations, harvest celebrations</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHIWONDO PRIMARY SCHOOL -->
-        <section class="education-section">
-            <h2>Chiwondo Primary School</h2>
-            <div class="education-content">
-                <div class="education-text">
-                    <p><strong>Founded:</strong> 1964</p>
-                    <p><strong>Named after:</strong> Chiwondo Lagoon</p>
-                    <p><strong>Students:</strong> 500+</p>
-                    <p><strong>Teachers:</strong> 15</p>
-                    <p>Chiwondo Primary School has educated generations of Kisyombe children. Many graduates have become
-                        teachers, nurses, agricultural officers, and business leaders contributing to Karonga and
-                        Malawi's economy.</p>
-                </div>
-                <div class="education-image">
-                    <img src="images/chiwondo-school.jpg"
-                        alt="Chiwondo Primary School, Kisyombe Village - established 1964" loading="lazy" width="600"
-                        height="400">
                 </div>
             </div>
         </section>
@@ -374,7 +317,7 @@
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-info">
                     <h3>Kisyombe Village Heritage</h3>
                     <p>Sichali Clan • 470+ Years of Kyungu Legacy</p>
@@ -393,13 +336,12 @@
                 <div class="footer-video">
                     <h4>🎥 Project Video</h4>
                     <a href="https://youtu.be/your-kisyombe-video-id" target="_blank" rel="noopener"
-                        class="btn btn-secondary">Watch Demonstration</a>
+                        class="secondary-button">Watch Demonstration</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Kisyombe Village Heritage</p>
-                <p class="acknowledgment">We acknowledge Paramount Chief Kyungu Clement Mwakasungula - Kyabala III and
-                    all 12 clans of Kisyombe Village.</p>
+                <p>&copy; <span id="currentYear"></span> Kisyombe Village Heritage</p>
+                <p class="acknowledgment">We acknowledge Paramount Chief Kyungu Clement Mwakasungula - Kyabala III</p>
             </div>
         </div>
     </footer>

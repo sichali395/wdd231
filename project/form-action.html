@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <!-- META DESCRIPTION -->
-    <meta name="description"
-        content="Form submission confirmation page for Kisyombe Village Heritage. View your submitted inquiry about Kisyombe Village, Chiwondo Lagoon, or Sichali clan history.">
-
+    <meta name="description" content="Form submission confirmation page for Kisyombe Village Heritage. Thank you for your interest in Kisyombe Village, Chiwondo Lagoon, and Sichali clan history.">
+    
     <!-- AUTHOR ATTRIBUTION -->
     <meta name="author" content="Kisyombe Village Heritage Project - WDD 231">
-
-    <!-- OPEN GRAPH META -->
+    
+    <!-- ===== OPEN GRAPH META TAGS - FULLY CORRECTED ===== -->
     <meta property="og:title" content="Form Submission Confirmation | Kisyombe Village Heritage">
-    <meta property="og:type" content="website">
+    <meta property="og:description" content="Thank you for your interest in Kisyombe Village! Your inquiry about Sichali clan history, Chiwondo Lagoon, or cultural heritage has been received. Tawonga chomene!">
+    <meta property="og:image" content="https://sichali395.github.io/wdd231/project/images/og-home-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kisyombe Village Heritage - Thank you for your interest">
     <meta property="og:url" content="https://sichali395.github.io/wdd231/project/form-action.html">
-
-    <!-- PAGE TITLE -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kisyombe Village Heritage">
+    <meta property="og:locale" content="en_US">
+    <!-- ===== END OPEN GRAPH META TAGS ===== -->
+    
     <title>Form Submission | Kisyombe Village Heritage</title>
-
-    <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-
-    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
 </head>
-
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-
+    
     <header class="site-header">
         <div class="container">
             <div class="logo-area">
-                <img src="assets/icons/logo.svg" alt="Kisyombe Village Heritage Logo" class="logo" width="60"
-                    height="60">
+                <img src="assets/icons/logo.svg" alt="Kisyombe Village Heritage Logo" class="logo" width="60" height="60">
                 <h1>Kisyombe Village Heritage</h1>
             </div>
         </div>
@@ -66,29 +61,27 @@
 
     <main id="main-content" class="container">
         <h1>Form Submission Confirmation</h1>
-
+        
         <div class="success-message">
             <div class="success-icon">✓</div>
             <h2>Thank You for Your Interest in Kisyombe Village!</h2>
             <p>Your inquiry has been received. The Village Heritage Committee will respond within 5-7 business days.</p>
         </div>
-
+        
         <div class="submission-details">
             <h3>Your Submission Details</h3>
             <div id="form-data" class="form-data-grid">
-                <!-- Dynamically populated by JavaScript via URLSearchParams -->
                 <div class="loading-spinner">Loading your submission data...</div>
             </div>
         </div>
-
+        
         <div class="action-buttons">
             <a href="index.html" class="btn btn-primary">Return to Home</a>
             <a href="culture.html" class="btn btn-secondary">Explore Sichali Clan History</a>
         </div>
-
+        
         <div class="heritage-note">
-            <p>🙏 Your interest helps preserve the heritage of Kisyombe Village, Sichali clan, and Chiwondo Lagoon for
-                future generations. <strong>Tawonga chomene!</strong> (Thank you very much!)</p>
+            <p>🙏 Your interest helps preserve the heritage of Kisyombe Village, Sichali clan, and Chiwondo Lagoon for future generations. <strong>Tawonga chomene!</strong> (Thank you very much!)</p>
         </div>
     </main>
 
@@ -98,12 +91,14 @@
                 <div class="footer-info">
                     <h3>Kisyombe Village Heritage</h3>
                     <p>Sichali Clan • Paramount Traditional Authority Kyungu</p>
+                    <p>Karonga District, Malawi</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="attributions.html">Attributions</a></li>
+                        <li><a href="site-plan.html">Site Plan</a></li>
                     </ul>
                 </div>
             </div>
@@ -114,20 +109,16 @@
     </footer>
 
     <script type="module">
-        // Import the form data function from main.js
         import { getFormDataFromURL } from './scripts/main.js';
-
+        
         document.addEventListener('DOMContentLoaded', () => {
             const formData = getFormDataFromURL();
             const container = document.getElementById('form-data');
-
-            // Set current year
             document.getElementById('current-year').textContent = new Date().getFullYear();
-
+            
             if (Object.keys(formData).length > 0) {
                 let html = '';
                 for (const [key, value] of Object.entries(formData)) {
-                    // Skip empty values
                     if (value && value.trim() !== '') {
                         html += `
                             <div class="data-card">
@@ -144,5 +135,3 @@
         });
     </script>
 </body>
-
-</html>

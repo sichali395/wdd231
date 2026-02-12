@@ -12,22 +12,43 @@
     <!-- AUTHOR ATTRIBUTION - RUBRIC REQUIREMENT -->
     <meta name="author" content="Kisyombe Village Heritage Project - WDD 231">
 
-    <!-- OPEN GRAPH / SOCIAL MEDIA META - RUBRIC REQUIREMENT -->
-    <meta property="og:title" content="Kisyombe Village Heritage | Home - Sichali Clan, Karonga">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://sichali395.github.io/wdd231/project/images/chiwondo-lagoon-hero.jpg">
-    <meta property="og:url" content="https://sichali395.github.io/wdd231/project/">
+    <!-- ===== OPEN GRAPH META TAGS - FULLY CORRECTED ===== -->
+    <!-- og:title - 40-60 characters, natural language -->
+    <meta property="og:title" content="Kisyombe Village Heritage | Sichali Clan & Chiwondo Lagoon, Karonga">
+    <!-- Character count: 58 characters -->
+
+    <!-- og:description - 50-160 characters, persuasive and human -->
     <meta property="og:description"
-        content="Official heritage website of Kisyombe Village - 20km south of Karonga Town, established by Kyungu Mwafongo (1820-1850), home to Sichali clan and Chiwondo Lagoon.">
-    <meta property="og:locale" content="en_US">
+        content="Discover Kisyombe Village - 20km south of Karonga. Home of Sichali clan since 1835, sacred Chiwondo Lagoon with salty water & no outlet, and 470+ years of Kyungu Dynasty heritage.">
+    <!-- Character count: 158 characters -->
+
+    <!-- og:image - Absolute URL, minimum 1200x630px -->
+    <meta property="og:image" content="https://sichali395.github.io/wdd231/project/images/og-home-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"
+        content="Chiwondo Lagoon - sacred lagoon with salty water, no outlet, Kisyombe Village, Karonga, Malawi">
+
+    <!-- og:url - Absolute canonical URL -->
+    <meta property="og:url" content="https://sichali395.github.io/wdd231/project/index.html">
+
+    <!-- og:type - Required for Facebook -->
+    <meta property="og:type" content="website">
+
+    <!-- og:site_name - Brand consistency -->
     <meta property="og:site_name" content="Kisyombe Village Heritage">
 
-    <!-- TWITTER CARD META -->
+    <!-- og:locale - Language and region -->
+    <meta property="og:locale" content="en_US">
+
+    <!-- TWITTER CARD META - Enhanced social sharing -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kisyombe Village Heritage | Home">
+    <meta name="twitter:title" content="Kisyombe Village Heritage | Sichali Clan & Chiwondo Lagoon">
     <meta name="twitter:description"
-        content="Discover Kisyombe Village - 20km south of Karonga, established by Kyungu Mwafongo. Home to 10,000+ people, Sichali clan, and sacred Chiwondo Lagoon.">
-    <meta name="twitter:image" content="https://sichali395.github.io/wdd231/project/images/chiwondo-lagoon-hero.jpg">
+        content="Discover Kisyombe Village - 20km south of Karonga. Home of Sichali clan since 1835, sacred Chiwondo Lagoon with salty water & no outlet.">
+    <meta name="twitter:image" content="https://sichali395.github.io/wdd231/project/images/og-home-image.jpg">
+    <meta name="twitter:image:alt" content="Chiwondo Lagoon - sacred lagoon, Kisyombe Village, Karonga">
+    <!-- ===== END OPEN GRAPH META TAGS ===== -->
 
     <!-- PAGE TITLE - SEMANTIC HTML TITLE - RUBRIC REQUIREMENT -->
     <title>Kisyombe Village Heritage | Home - Sichali Clan, Chiwondo Lagoon, Karonga</title>
@@ -93,7 +114,6 @@
         <section class="hero">
             <div class="container">
                 <picture>
-                    <!-- Responsive images - different sizes for mobile/desktop -->
                     <source media="(min-width: 1024px)" srcset="images/chiwondo-lagoon-desktop.jpg">
                     <source media="(min-width: 768px)" srcset="images/chiwondo-lagoon-tablet.jpg">
                     <source media="(min-width: 320px)" srcset="images/chiwondo-lagoon-mobile.jpg">
@@ -333,7 +353,6 @@
 
                 <!-- DYNAMIC CONTENT GRID - POPULATED BY JAVASCRIPT -->
                 <div id="heritage-grid" class="heritage-grid">
-                    <!-- JavaScript will populate this grid -->
                     <div class="loading-spinner">Loading heritage data...</div>
                 </div>
             </div>

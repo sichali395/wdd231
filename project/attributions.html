@@ -12,10 +12,10 @@
     <!-- AUTHOR ATTRIBUTION -->
     <meta name="author" content="Sichali395 - WDD 231 Student">
 
-    <!-- OPEN GRAPH META - 158 CHARACTERS -->
+    <!-- OPEN GRAPH META - 98 CHARACTERS (REDUCED) -->
     <meta property="og:title" content="Attributions & Sources | Kisyombe Village Heritage">
     <meta property="og:description"
-        content="We acknowledge Sichali clan elders, Kyungu Traditional Authority, Mkwasi priesthood, and all 12 clans of Kisyombe Village for preserving oral histories and cultural heritage.">
+        content="We acknowledge Sichali clan elders, Kyungu Traditional Authority, Mkwasi priesthood, and all 12 clans of Kisyombe Village for preserving oral histories.">
     <meta property="og:image" content="https://sichali395.github.io/wdd231/project/images/og-attributions.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -34,7 +34,8 @@
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
 
-    <!-- SINGLE CONSOLIDATED CSS FILE -->
+    <!-- TWO CSS FILES -->
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 
@@ -72,8 +73,7 @@
     <main id="main-content" class="container">
         <h1>Attributions & Sources</h1>
 
-        <div class="attributions-grid"
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+        <div class="attributions-grid">
             <div class="data-card">
                 <h2>📖 Oral Histories</h2>
                 <ul>
@@ -122,7 +122,7 @@
                 </ul>
             </div>
 
-            <div class="data-card" style="border-left-color: var(--accent);">
+            <div class="data-card attribution-card-accent">
                 <h2>🙏 Special Acknowledgments</h2>
                 <ul>
                     <li><strong>Paramount Chief Kyungu Clement Mwakasungula</strong></li>
@@ -130,8 +130,7 @@
                     <li><strong>Village Head Nkhomo</strong> - Descendant of Nkhomo</li>
                     <li><strong>All 12 clans of Kisyombe Village</strong></li>
                 </ul>
-                <p class="dedication" style="margin-top: 1rem; font-style: italic;">Dedicated to preserving Kisyombe
-                    heritage.</p>
+                <p class="dedication-text">Dedicated to preserving Kisyombe heritage.</p>
             </div>
         </div>
 
@@ -165,6 +164,7 @@
         </div>
     </footer>
 
+    <!-- EXTERNAL JAVASCRIPT FILES -->
     <script type="module" src="scripts/main.js"></script>
     <script src="scripts/attributions.js" defer></script>
 </body>

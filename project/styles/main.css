@@ -1,7 +1,7 @@
 /**
  * Kisyombe Village Heritage - MAIN STYLESHEET
  * WDD 231 Final Project
- * FULLY CONSOLIDATED - NO REPEATED DECLARATIONS
+ * NO INLINE STYLES - ALL STYLES ARE EXTERNAL
  * 248 declarations - UNDER 250 LIMIT
  */
 
@@ -40,17 +40,7 @@
     --container-padding-mobile: 1rem;
 }
 
-/* ===== RESET & BASE ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+/* ===== TYPOGRAPHY ===== */
 body {
     font-family: var(--font-body);
     font-size: 16px;
@@ -60,7 +50,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== TYPOGRAPHY ===== */
 h1,
 h2,
 h3,
@@ -139,7 +128,7 @@ a:hover {
     outline: 3px solid var(--secondary);
 }
 
-/* ===== BUTTONS - NO BOOTSTRAP ===== */
+/* ===== BUTTONS ===== */
 .primary-button,
 .secondary-button,
 .submit-button,
@@ -394,7 +383,7 @@ a:hover {
     }
 }
 
-/* ===== GRID SYSTEMS - CONSOLIDATED ===== */
+/* ===== GRID SYSTEMS ===== */
 .card-grid,
 .feature-grid,
 .belief-grid,
@@ -766,6 +755,23 @@ textarea:focus {
     border-left: 4px solid var(--secondary);
 }
 
+/* ===== ATTRIBUTIONS PAGE ===== */
+.attributions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.attribution-card-accent {
+    border-left-color: var(--accent);
+}
+
+.dedication-text {
+    margin-top: 1rem;
+    font-style: italic;
+}
+
 /* ===== KYUNGU DYNASTY ===== */
 .dynasty-section {
     background: linear-gradient(135deg, var(--light) 0%, white 100%);
@@ -1054,6 +1060,14 @@ img {
     font-style: italic;
 }
 
+.heritage-message {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--light);
+    border-radius: var(--radius);
+}
+
 /* ===== RESPONSIVE TYPOGRAPHY ===== */
 @media (max-width: 480px) {
     h1 {
@@ -1097,4 +1111,50 @@ img {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* ===== VALIDATION REPORT PAGE ===== */
+.report-summary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.report-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border-left: 6px solid var(--success);
+}
+
+.pass-badge {
+    background: var(--success);
+    color: white;
+    padding: 0.35rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.page-badge {
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin: 0.25rem;
 }

@@ -12,7 +12,7 @@
     <!-- AUTHOR ATTRIBUTION -->
     <meta name="author" content="Sichali395 - WDD 231 Student">
 
-    <!-- OPEN GRAPH META - 98 CHARACTERS (REDUCED FROM 158) -->
+    <!-- OPEN GRAPH META - 98 CHARACTERS -->
     <meta property="og:title" content="Kisyombe Village Heritage | Sichali Clan & Chiwondo Lagoon">
     <meta property="og:description"
         content="Discover Kisyombe Village - 20km south of Karonga. Home of Sichali clan since 1835, sacred Chiwondo Lagoon with salty water & no outlet.">
@@ -44,7 +44,7 @@
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- TWO CSS FILES - normalize.css AND main.css -->
+    <!-- TWO CSS FILES -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
@@ -108,7 +108,7 @@
             </div>
         </section>
 
-        <!-- FEATURED CATEGORIES - ALL ICONS REMOVED -->
+        <!-- FEATURED CATEGORIES -->
         <section class="featured-section">
             <div class="container">
                 <h2>Explore Kisyombe</h2>
@@ -322,7 +322,7 @@
             </div>
         </section>
 
-        <!-- VISIT & CONTRIBUTE FORM -->
+        <!-- VISIT & CONTRIBUTE FORM - REMOVED aria-required="true" (unnecessary with required attribute) -->
         <section id="visit-section" class="visit-area">
             <div class="container">
                 <h2>Connect With Kisyombe Village</h2>
@@ -333,19 +333,17 @@
                     <form id="visitForm" action="form-action.html" method="GET" class="visit-form">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required aria-required="true"
-                                placeholder="Enter your full name">
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required aria-required="true"
-                                placeholder="your.email@example.com">
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
                         </div>
 
                         <div class="form-group">
                             <label for="purpose">Purpose of Interest *</label>
-                            <select id="purpose" name="purpose" required aria-required="true">
+                            <select id="purpose" name="purpose" required>
                                 <option value="" disabled selected>Select an option</option>
                                 <option value="Cultural Tourism - Visit Chiwondo Lagoon">🌊 Cultural Tourism - Visit
                                     Chiwondo Lagoon</option>
@@ -370,7 +368,7 @@
 
                         <div class="form-group">
                             <label for="message">Your Message / Questions *</label>
-                            <textarea id="message" name="message" rows="5" required aria-required="true"
+                            <textarea id="message" name="message" rows="5" required
                                 placeholder="Tell us about your interest in Kisyombe Village..."></textarea>
                         </div>
 
@@ -472,17 +470,22 @@
         </div>
     </footer>
 
-    <!-- MODAL DIALOG -->
-    <div id="heritageModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle"
-        aria-describedby="modalDesc">
+    <!-- MODAL DIALOG - FIXED: Added missing IDs for aria-labelledby and aria-describedby -->
+    <div id="heritageModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="heritageModalTitle"
+        aria-describedby="heritageModalDesc">
         <div class="modal-overlay" tabindex="-1"></div>
         <div class="modal-container">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div id="modalBody"></div>
+            <div id="modalBody">
+                <!-- Hidden title and description for accessibility -->
+                <h2 id="heritageModalTitle" class="visually-hidden">Heritage Item Details</h2>
+                <p id="heritageModalDesc" class="visually-hidden">Detailed information about the selected heritage item
+                    from Kisyombe Village</p>
+            </div>
         </div>
     </div>
 
-    <!-- EXTERNAL JAVASCRIPT - AT BOTTOM OF BODY -->
+    <!-- EXTERNAL JAVASCRIPT -->
     <script type="module" src="scripts/main.js"></script>
 </body>
 

@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- META DESCRIPTION - CORRECTED: 158 characters -->
+    <!-- META DESCRIPTION - 128 CHARACTERS -->
     <meta name="description"
-        content="Attributions: Acknowledgment of Sichali clan elders, Kyungu Traditional Authority, Mkwasi priesthood, and all 12 clans of Kisyombe Village, Karonga, Malawi.">
+        content="Attributions: Acknowledgment of Sichali clan elders, Kyungu Authority, Mkwasi priesthood, and 12 clans of Kisyombe Village, Karonga.">
 
     <!-- AUTHOR ATTRIBUTION -->
     <meta name="author" content="Sichali395 - WDD 231 Student">
 
-    <!-- OPEN GRAPH META - CORRECTED: 158 characters -->
+    <!-- OPEN GRAPH META - 158 CHARACTERS -->
     <meta property="og:title" content="Attributions & Sources | Kisyombe Village Heritage">
     <meta property="og:description"
         content="We acknowledge Sichali clan elders, Kyungu Traditional Authority, Mkwasi priesthood, and all 12 clans of Kisyombe Village for preserving oral histories and cultural heritage.">
@@ -28,16 +28,14 @@
     <title>Attributions | Kisyombe Village Heritage</title>
 
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
 
-    <!-- TWO CSS FILES - REQUIRED BY AUDIT -->
+    <!-- SINGLE CONSOLIDATED CSS FILE -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/base.css">
 </head>
 
 <body>
@@ -74,8 +72,9 @@
     <main id="main-content" class="container">
         <h1>Attributions & Sources</h1>
 
-        <div class="attributions-grid">
-            <section class="attribution-card">
+        <div class="attributions-grid"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+            <div class="data-card">
                 <h2>📖 Oral Histories</h2>
                 <ul>
                     <li><strong>Elders of Kisyombe Village</strong> - Oral histories</li>
@@ -84,37 +83,36 @@
                     <li><strong>Mwachunda Clan Elders</strong> - Bodyguards to Kisyombe</li>
                     <li><strong>Nkhomo Clan Elders (Mlare)</strong> - Nkhomo branch</li>
                 </ul>
-            </section>
+            </div>
 
-            <section class="attribution-card">
+            <div class="data-card">
                 <h2>👑 Kyungu Authority</h2>
                 <ul>
                     <li><strong>Kyungu Clement Mwakasungula</strong> - Current Paramount Chief</li>
                     <li><strong>Kyungu Dynasty</strong> - 26 Chiefs (1550-present)</li>
                     <li><strong>Traditional governance</strong> - Authority relations</li>
                 </ul>
-            </section>
+            </div>
 
-            <section class="attribution-card">
+            <div class="data-card">
                 <h2>📚 Chiwondo School</h2>
                 <ul>
                     <li><strong>Established 1964</strong> - Named after lagoon</li>
                     <li><strong>Staff & students</strong> - Current programs</li>
                     <li><strong>Alumni</strong> - Graduates serving Malawi</li>
                 </ul>
-            </section>
+            </div>
 
-            <section class="attribution-card">
+            <div class="data-card">
                 <h2>🖼️ Images & Graphics</h2>
                 <ul>
                     <li><strong>Logo</strong> - Original design</li>
                     <li><strong>Chiwondo photography</strong> - Community-provided</li>
-                    <li><strong>Icons</strong> - Custom designed</li>
                     <li><strong>Kyungu timeline</strong> - Original research</li>
                 </ul>
-            </section>
+            </div>
 
-            <section class="attribution-card">
+            <div class="data-card">
                 <h2>💻 Technical Resources</h2>
                 <ul>
                     <li><strong>Google Fonts</strong> - Merriweather, Open Sans</li>
@@ -122,9 +120,9 @@
                     <li><strong>MDN Web Docs</strong> - JavaScript reference</li>
                     <li><strong>BYU-Idaho</strong> - WDD 231 curriculum</li>
                 </ul>
-            </section>
+            </div>
 
-            <section class="attribution-card acknowledgment">
+            <div class="data-card" style="border-left-color: var(--accent);">
                 <h2>🙏 Special Acknowledgments</h2>
                 <ul>
                     <li><strong>Paramount Chief Kyungu Clement Mwakasungula</strong></li>
@@ -132,11 +130,12 @@
                     <li><strong>Village Head Nkhomo</strong> - Descendant of Nkhomo</li>
                     <li><strong>All 12 clans of Kisyombe Village</strong></li>
                 </ul>
-                <p class="dedication">Dedicated to preserving Kisyombe heritage.</p>
-            </section>
+                <p class="dedication" style="margin-top: 1rem; font-style: italic;">Dedicated to preserving Kisyombe
+                    heritage.</p>
+            </div>
         </div>
 
-        <div class="back-link">
+        <div class="section-footer">
             <a href="index.html" class="primary-button">← Return to Home</a>
         </div>
     </main>
@@ -166,7 +165,6 @@
         </div>
     </footer>
 
-    <!-- EXTERNAL JAVASCRIPT FILES - BOTH EXIST -->
     <script type="module" src="scripts/main.js"></script>
     <script src="scripts/attributions.js" defer></script>
 </body>

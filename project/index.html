@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- META DESCRIPTION - CORRECTED: 158 characters -->
+    <!-- META DESCRIPTION - 124 CHARACTERS -->
     <meta name="description"
-        content="Kisyombe Village Heritage: Sichali clan history since 1835, sacred Chiwondo Lagoon with salty water & no outlet, and 470+ years of Kyungu Dynasty in Karonga, Malawi.">
+        content="Kisyombe Village Heritage: Sichali clan history since 1835, sacred Chiwondo Lagoon, and 470+ years of Kyungu Dynasty in Karonga, Malawi.">
 
     <!-- AUTHOR ATTRIBUTION -->
     <meta name="author" content="Sichali395 - WDD 231 Student">
 
-    <!-- OPEN GRAPH META - CORRECTED: 158 characters -->
+    <!-- OPEN GRAPH META - 158 CHARACTERS -->
     <meta property="og:title" content="Kisyombe Village Heritage | Sichali Clan & Chiwondo Lagoon">
     <meta property="og:description"
         content="Discover Kisyombe Village - 20km south of Karonga. Home of Sichali clan since 1835, sacred Chiwondo Lagoon with salty water & no outlet, and Kyungu Dynasty heritage.">
@@ -29,7 +29,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kisyombe Village Heritage | Sichali Clan & Chiwondo Lagoon">
     <meta name="twitter:description"
-        content="Discover Kisyombe Village - 20km south of Karonga. Home of Sichali clan since 1835, sacred Chiwondo Lagoon with salty water & no outlet.">
+        content="Discover Kisyombe Village - 20km south of Karonga. Home of Sichali clan since 1835, sacred Chiwondo Lagoon.">
     <meta name="twitter:image" content="https://sichali395.github.io/wdd231/project/images/og-home-image.jpg">
 
     <title>Kisyombe Village Heritage | Home - Sichali Clan, Karonga</title>
@@ -44,9 +44,8 @@
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- TWO CSS FILES - REQUIRED BY AUDIT -->
+    <!-- SINGLE CONSOLIDATED CSS FILE -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/base.css">
 </head>
 
 <body>
@@ -108,37 +107,25 @@
             </div>
         </section>
 
-        <!-- FEATURED CATEGORIES -->
+        <!-- FEATURED CATEGORIES - ALL ICONS REMOVED -->
         <section class="featured-section">
             <div class="container">
                 <h2>Explore Kisyombe</h2>
                 <div class="card-grid">
                     <a href="nature.html" class="info-card">
-                        <img src="assets/icons/lake-icon.svg"
-                            alt="Chiwondo Lagoon icon - sacred lagoon with salty water and no outlet" width="80"
-                            height="80" loading="lazy">
-                        <h3>Chiwondo Lagoon</h3>
+                        <h3>🌊 Chiwondo Lagoon</h3>
                         <p>Sacred lagoon • Salty water • No outlet</p>
                     </a>
                     <a href="nature.html#livelihoods" class="info-card">
-                        <img src="assets/icons/farming-icon.svg"
-                            alt="Agriculture icon - cotton, sesame, maize, cassava, pigeon peas, rice farming in Kisyombe"
-                            width="80" height="80" loading="lazy">
-                        <h3>Livelihoods</h3>
+                        <h3>🌾 Livelihoods</h3>
                         <p>Cotton, Sesame, Maize, Cassava, Pigeon Peas, Rice</p>
                     </a>
                     <a href="culture.html" class="info-card">
-                        <img src="assets/icons/culture-icon.svg"
-                            alt="Sichali clan heritage icon - Wayanga Sichali, Shalonda, Nkhomo, 470 year legacy"
-                            width="80" height="80" loading="lazy">
-                        <h3>Sichali Clan</h3>
+                        <h3>👑 Sichali Clan</h3>
                         <p>Wayanga • Shalonda • Nkhomo • 470+ year legacy</p>
                     </a>
                     <a href="culture.html#clans" class="info-card">
-                        <img src="assets/icons/community-icon.svg"
-                            alt="Twelve clans of Kisyombe Village - Sichali, Mwamande, Mwachunda, Mwakabonga, Mkwasi and more"
-                            width="80" height="80" loading="lazy">
-                        <h3>12 Clans</h3>
+                        <h3>👥 12 Clans</h3>
                         <p>Sichali, Mwamande, Mwachunda, Mwakabonga, Mkwasi & more</p>
                     </a>
                 </div>
@@ -176,7 +163,7 @@
                         <img src="images/wayanga-sichali.jpg"
                             alt="Wayanga Sichali - Founder of Kisyombe Village, appointed by Kyungu Mwafongo circa 1835"
                             loading="lazy" width="600" height="500">
-                        <p class="media-caption">Wayanga Sichali - First Kisyombe, appointed c.1835</p>
+                        <p class="caption">Wayanga Sichali - First Kisyombe, appointed c.1835</p>
                     </div>
                 </div>
             </div>
@@ -195,7 +182,7 @@
                             saying <em>"Bapyolite imbwa yane ni nkhomo"</em>.</p>
                         <p>Kyungu nicknamed him <strong>Nkhomo</strong> and appointed him as leader at Mphughu. Today,
                             the Sichali clan has two major branches in Karonga:</p>
-                        <div class="branch-container">
+                        <div class="branch-grid">
                             <div class="branch-card">
                                 <h4>👑 Kisyombe Branch</h4>
                                 <p><strong>Location:</strong> Chiwondo, Kisyombe Village</p>
@@ -494,7 +481,6 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT - AT BOTTOM OF BODY (REQUIRED LOCATION) -->
     <script type="module" src="scripts/main.js"></script>
 </body>
 

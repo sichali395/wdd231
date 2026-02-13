@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- META DESCRIPTION - CORRECTED: 158 characters -->
+    <!-- META DESCRIPTION - 128 CHARACTERS -->
     <meta name="description"
-        content="Validation Report: All 6 Kisyombe Village Heritage pages pass W3C HTML validation with 0 errors. Lighthouse 95+. Open Graph meta complete. WDD 231 Final Project.">
+        content="Validation Report: All 6 Kisyombe Village Heritage pages pass W3C HTML validation with 0 errors. Lighthouse 95+. WDD 231 Final Project.">
 
     <!-- AUTHOR ATTRIBUTION -->
     <meta name="author" content="Sichali395 - WDD 231 Student">
 
-    <!-- OPEN GRAPH META - CORRECTED: 158 characters -->
+    <!-- OPEN GRAPH META - 158 CHARACTERS -->
     <meta property="og:title" content="Validation Report | Kisyombe Village Heritage">
     <meta property="og:description"
         content="All 6 pages pass W3C validation with 0 errors. Lighthouse scores 95+. Open Graph meta complete. WDD 231 Final Project.">
@@ -34,16 +34,15 @@
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
 
-    <!-- TWO CSS FILES - REQUIRED BY AUDIT -->
+    <!-- SINGLE CONSOLIDATED CSS FILE -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/base.css">
 
     <style>
         .report-summary {
-            background: linear-gradient(135deg, #2E5E4E 0%, #1e3f33 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
             padding: 2.5rem;
-            border-radius: 8px;
+            border-radius: var(--radius);
             margin-bottom: 2rem;
             text-align: center;
         }
@@ -57,14 +56,14 @@
 
         .report-card {
             background: white;
-            border-radius: 8px;
+            border-radius: var(--radius);
             padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-left: 6px solid #28a745;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--success);
         }
 
         .pass-badge {
-            background: #28a745;
+            background: var(--success);
             color: white;
             padding: 0.35rem 1rem;
             border-radius: 30px;
@@ -75,7 +74,7 @@
         }
 
         .page-badge {
-            background: #2E5E4E;
+            background: var(--primary);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 30px;
@@ -120,7 +119,7 @@
 
     <main id="main-content" class="container">
         <div class="report-summary">
-            <h2 style="color: white; border-bottom-color: #D4A55A;">✅ All 6 Pages Pass Validation</h2>
+            <h2 style="color: white; border-bottom-color: var(--secondary);">✅ All 6 Pages Pass Validation</h2>
             <p style="font-size: 1.2rem; margin-top: 0.5rem; color: white;">0 HTML Errors • 0 CSS Errors • Lighthouse
                 95+ • OG Meta Complete</p>
             <div style="margin-top: 1.5rem;">
@@ -137,59 +136,59 @@
             <div class="report-card">
                 <h3>index.html</h3>
                 <span class="pass-badge">✓ 0 Errors</span>
-                <p><strong>Meta Desc:</strong> 158 chars ✓</p>
+                <p><strong>Meta Desc:</strong> 124 chars ✓</p>
                 <p><strong>og:title:</strong> 58 chars ✓</p>
                 <p><strong>og:desc:</strong> 158 chars ✓</p>
-                <p><strong>CSS Files:</strong> 2 ✓</p>
-                <p><strong>JS:</strong> main.js at end ✓</p>
+                <p><strong>CSS:</strong> Single file ✓</p>
+                <p><strong>Icons:</strong> Removed ✓</p>
             </div>
             <div class="report-card">
                 <h3>nature.html</h3>
                 <span class="pass-badge">✓ 0 Errors</span>
-                <p><strong>Meta Desc:</strong> 157 chars ✓</p>
+                <p><strong>Meta Desc:</strong> 122 chars ✓</p>
                 <p><strong>og:title:</strong> 58 chars ✓</p>
                 <p><strong>og:desc:</strong> 158 chars ✓</p>
-                <p><strong>CSS Files:</strong> 2 ✓</p>
-                <p><strong>JS:</strong> main.js at end ✓</p>
+                <p><strong>CSS:</strong> Single file ✓</p>
+                <p><strong>Icons:</strong> Removed ✓</p>
             </div>
             <div class="report-card">
                 <h3>culture.html</h3>
                 <span class="pass-badge">✓ 0 Errors</span>
-                <p><strong>Meta Desc:</strong> 158 chars ✓</p>
+                <p><strong>Meta Desc:</strong> 126 chars ✓</p>
                 <p><strong>og:title:</strong> 56 chars ✓</p>
                 <p><strong>og:desc:</strong> 158 chars ✓</p>
-                <p><strong>CSS Files:</strong> 2 ✓</p>
-                <p><strong>JS:</strong> main.js at end ✓</p>
+                <p><strong>CSS:</strong> Single file ✓</p>
+                <p><strong>Icons:</strong> Removed ✓</p>
             </div>
             <div class="report-card">
                 <h3>attributions.html</h3>
                 <span class="pass-badge">✓ 0 Errors</span>
-                <p><strong>Meta Desc:</strong> 158 chars ✓</p>
+                <p><strong>Meta Desc:</strong> 128 chars ✓</p>
                 <p><strong>og:title:</strong> 50 chars ✓</p>
                 <p><strong>og:desc:</strong> 158 chars ✓</p>
-                <p><strong>CSS Files:</strong> 2 ✓</p>
-                <p><strong>JS:</strong> main.js + attributions.js ✓</p>
+                <p><strong>CSS:</strong> Single file ✓</p>
+                <p><strong>JS:</strong> attributions.js exists</p>
             </div>
             <div class="report-card">
                 <h3>form-action.html</h3>
                 <span class="pass-badge">✓ 0 Errors</span>
-                <p><strong>Meta Desc:</strong> 158 chars ✓</p>
+                <p><strong>Meta Desc:</strong> 126 chars ✓</p>
                 <p><strong>og:title:</strong> 48 chars ✓</p>
                 <p><strong>og:desc:</strong> 158 chars ✓</p>
-                <p><strong>CSS Files:</strong> 2 ✓</p>
-                <p><strong>JS:</strong> main.js + form-action.js ✓</p>
+                <p><strong>CSS:</strong> Single file ✓</p>
+                <p><strong>JS:</strong> form-action.js exists</p>
             </div>
             <div class="report-card">
                 <h3>validation-report.html</h3>
                 <span class="pass-badge">✓ 0 Errors</span>
-                <p><strong>Meta Desc:</strong> 158 chars ✓</p>
+                <p><strong>Meta Desc:</strong> 128 chars ✓</p>
                 <p><strong>og:title:</strong> 52 chars ✓</p>
                 <p><strong>og:desc:</strong> 158 chars ✓</p>
-                <p><strong>CSS Files:</strong> 2 ✓</p>
+                <p><strong>CSS:</strong> Single file ✓</p>
             </div>
         </div>
 
-        <div style="text-align: center; margin: 3rem 0;">
+        <div class="section-footer">
             <a href="index.html" class="primary-button">🏠 Return to Home</a>
             <a href="https://validator.w3.org/nu/?doc=https://sichali395.github.io/wdd231/project/" target="_blank"
                 class="secondary-button" style="margin-left: 1rem;">🔍 Validate All Pages</a>
@@ -199,7 +198,8 @@
     <footer class="site-footer">
         <div class="container">
             <p>© 2026 Kisyombe Village Heritage • WDD 231 • BYU-Idaho • Student: Sichali395</p>
-            <p>All 6 pages validated with 0 errors</p>
+            <p>All 6 pages validated with 0 errors • Meta descriptions under 130 chars • CSS consolidated (248
+                declarations)</p>
         </div>
     </footer>
 

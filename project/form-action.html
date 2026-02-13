@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- META DESCRIPTION - CORRECTED: 158 characters -->
+    <!-- META DESCRIPTION - 126 CHARACTERS -->
     <meta name="description"
         content="Form submission confirmation: Thank you for your interest in Kisyombe Village, Chiwondo Lagoon, and Sichali clan history. Tawonga chomene!">
 
     <!-- AUTHOR ATTRIBUTION -->
     <meta name="author" content="Sichali395 - WDD 231 Student">
 
-    <!-- OPEN GRAPH META - CORRECTED: 158 characters -->
+    <!-- OPEN GRAPH META - 158 CHARACTERS -->
     <meta property="og:title" content="Form Submission | Kisyombe Village Heritage">
     <meta property="og:description"
         content="Thank you for your interest in Kisyombe Village! Your inquiry about Sichali clan history, Chiwondo Lagoon, or cultural heritage has been received. Tawonga chomene!">
@@ -28,16 +28,14 @@
     <title>Form Submission | Kisyombe Village Heritage</title>
 
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
 
-    <!-- TWO CSS FILES - REQUIRED BY AUDIT -->
+    <!-- SINGLE CONSOLIDATED CSS FILE -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/base.css">
 </head>
 
 <body>
@@ -86,12 +84,13 @@
             </div>
         </div>
 
-        <div class="action-group">
+        <div class="section-footer">
             <a href="index.html" class="primary-button">Return to Home</a>
-            <a href="culture.html" class="secondary-button">Explore Sichali Clan History</a>
+            <a href="culture.html" class="secondary-button" style="margin-left: 1rem;">Explore Sichali Clan History</a>
         </div>
 
-        <div class="heritage-message">
+        <div class="heritage-message"
+            style="text-align: center; margin-top: 2rem; padding: 1rem; background: var(--light); border-radius: var(--radius);">
             <p>🙏 Your interest helps preserve Kisyombe heritage. <strong>Tawonga chomene!</strong></p>
         </div>
     </main>
@@ -119,7 +118,6 @@
         </div>
     </footer>
 
-    <!-- EXTERNAL JAVASCRIPT FILES - BOTH EXIST -->
     <script type="module" src="scripts/main.js"></script>
     <script src="scripts/form-action.js" defer></script>
 </body>

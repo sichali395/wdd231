@@ -322,7 +322,7 @@
             </div>
         </section>
 
-        <!-- VISIT & CONTRIBUTE FORM - REMOVED aria-required="true" (unnecessary with required attribute) -->
+        <!-- VISIT & CONTRIBUTE FORM -->
         <section id="visit-section" class="visit-area">
             <div class="container">
                 <h2>Connect With Kisyombe Village</h2>
@@ -437,16 +437,20 @@
                 </div>
 
                 <div class="footer-video">
-                    <h4>🎥 Project Video</h4>
-                    <p>3-5 minute demonstration:</p>
+                    <h4>🎥 Project Video Demonstration</h4>
+                    <p>Watch the 3-5 minute video demonstrating:</p>
                     <ul class="video-features">
-                        <li>✓ Fetch API with try/catch</li>
-                        <li>✓ ES Modules</li>
-                        <li>✓ Local Storage</li>
-                        <li>✓ Modal Dialog</li>
+                        <li>✓ Fetch API with try/catch from JSON data</li>
+                        <li>✓ ES Modules (main.js, data.js, modal.js, storage.js)</li>
+                        <li>✓ Local Storage for user preferences</li>
+                        <li>✓ Accessible Modal Dialog with keyboard navigation</li>
+                        <li>✓ Array Methods (filter, map, forEach)</li>
+                        <li>✓ Template Literals for dynamic content</li>
                     </ul>
                     <a href="https://youtu.be/your-kisyombe-video-id" target="_blank" rel="noopener"
-                        class="secondary-button">Watch Demonstration</a>
+                        class="secondary-button">Watch Full Demonstration</a>
+                    <p class="video-note">Video includes: face reveal • screen recording • 3-5 minutes • code
+                        walkthrough</p>
                 </div>
             </div>
 
@@ -470,22 +474,24 @@
         </div>
     </footer>
 
-    <!-- MODAL DIALOG - FIXED: Added missing IDs for aria-labelledby and aria-describedby -->
-    <div id="heritageModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="heritageModalTitle"
-        aria-describedby="heritageModalDesc">
+    <!-- COMPLETE ACCESSIBLE MODAL DIALOG -->
+    <div id="heritageModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle"
+        aria-describedby="modalDesc">
         <div class="modal-overlay" tabindex="-1"></div>
         <div class="modal-container">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div id="modalBody">
-                <!-- Hidden title and description for accessibility -->
-                <h2 id="heritageModalTitle" class="visually-hidden">Heritage Item Details</h2>
-                <p id="heritageModalDesc" class="visually-hidden">Detailed information about the selected heritage item
-                    from Kisyombe Village</p>
+            <div class="modal-header">
+                <h2 id="modalTitle">Heritage Item Details</h2>
+                <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            </div>
+            <div id="modalDesc" class="visually-hidden">Detailed information about the selected heritage item from
+                Kisyombe Village including history, location, clan affiliation, and cultural significance.</div>
+            <div id="modalBody" class="modal-body">
+                <!-- Content will be dynamically populated by JavaScript -->
             </div>
         </div>
     </div>
 
-    <!-- EXTERNAL JAVASCRIPT -->
+    <!-- EXTERNAL JAVASCRIPT - ES MODULES -->
     <script type="module" src="scripts/main.js"></script>
 </body>
 

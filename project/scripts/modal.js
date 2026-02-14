@@ -9,7 +9,10 @@ export function initModal() {
     const closeBtn = document.querySelector('.modal-close-btn');
     const overlay = document.querySelector('.modal-overlay');
 
-    if (!modal) return;
+    if (!modal) {
+        console.warn('Modal element not found');
+        return { openModal: () => { }, closeModal: () => { } };
+    }
 
     // Store last focused element before modal opens
     let lastFocusedElement = null;
@@ -47,6 +50,8 @@ export function initModal() {
     };
 
     function openModal() {
+        console.log('Opening modal');
+
         // Store current focused element
         lastFocusedElement = document.activeElement;
 
@@ -54,7 +59,7 @@ export function initModal() {
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
 
-        // Set focus to first focusable element in modal
+        // Set focus to close button (first focusable element)
         setTimeout(() => {
             const focusableElements = getFocusableElements();
             if (focusableElements.length > 0) {
@@ -67,6 +72,8 @@ export function initModal() {
     }
 
     function closeModal() {
+        console.log('Closing modal');
+
         // Hide modal
         modal.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('modal-open');
@@ -108,81 +115,4 @@ export function initModal() {
         openModal,
         closeModal
     };
-}
-
-export function showModal(item) {
-    const modal = document.getElementById('heritageModal');
-    const modalBody = document.getElementById('modalBody');
-    const modalTitle = document.getElementById('modalTitle');
-
-    if (!modal || !modalBody) return;
-
-    // Create modal content
-    const categoryClass = item.category || 'practice';
-    const categoryDisplay = item.category ? item.category.charAt(0).toUpperCase() + item.category.slice(1) : 'Heritage';
-
-    modalBody.innerHTML = `
-        <img src="${item.image || 'images/placeholder.jpg'}" alt="${item.name}" loading="lazy" width="600" height="400">
-        
-        <span class="modal-category-tag ${categoryClass}">${categoryDisplay}</span>
-        
-        <h3>${item.name}</h3>
-        <p>${item.description || 'No description available.'}</p>
-        
-        <div class="modal-info-grid">
-            ${item.location ? `
-                <div class="modal-info-item">
-                    <strong>📍 Location</strong>
-                    <span>${item.location}</span>
-                </div>
-            ` : ''}
-            
-            ${item.era ? `
-                <div class="modal-info-item">
-                    <strong>⏱️ Era</strong>
-                    <span>${item.era}</span>
-                </div>
-            ` : ''}
-            
-            ${item.clanAffiliation ? `
-                <div class="modal-info-item">
-                    <strong>🏷️ Clan</strong>
-                    <span>${item.clanAffiliation}</span>
-                </div>
-            ` : ''}
-            
-            ${item.kyunguRelation ? `
-                <div class="modal-info-item">
-                    <strong>👑 Kyungu</strong>
-                    <span>${item.kyunguRelation}</span>
-                </div>
-            ` : ''}
-            
-            ${item.significance ? `
-                <div class="modal-info-item">
-                    <strong>📜 Significance</strong>
-                    <span>${item.significance}</span>
-                </div>
-            ` : ''}
-            
-            ${item.preservationStatus ? `
-                <div class="modal-info-item">
-                    <strong>🔮 Status</strong>
-                    <span>${item.preservationStatus}</span>
-                </div>
-            ` : ''}
-        </div>
-        
-        ${item.title ? `<p><strong>Title:</strong> ${item.title}</p>` : ''}
-        ${item.descendants ? `<p><strong>Descendants:</strong> ${item.descendants}</p>` : ''}
-    `;
-
-    // Update modal title
-    if (modalTitle) {
-        modalTitle.textContent = item.name;
-    }
-
-    // Open modal
-    const modalModule = initModal();
-    modalModule.openModal();
 }

@@ -1368,3 +1368,102 @@ img {
     display: inline-block;
     margin: 0.25rem;
 }
+
+/* ===== ADDITIONAL CLASSES FOR VALIDATION REPORT ===== */
+.summary-text {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: white;
+}
+
+.badge-container {
+    margin-top: 1.5rem;
+}
+
+.video-section {
+    margin-top: 2rem;
+}
+
+.video-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.video-specs {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.specs-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+/* ===== ATTRIBUTIONS PAGE ===== */
+.attributions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.attribution-card-accent {
+    border-left-color: var(--accent) !important;
+}
+
+.dedication-text {
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+/* ===== REPORT CARD STYLES ===== */
+.report-summary {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.report-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border-left: 6px solid var(--success);
+}
+
+.report-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 0.75rem;
+}
+
+.pass-badge {
+    background: var(--success);
+    color: white;
+    padding: 0.35rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.page-badge {
+    background: var(--primary-dark);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin: 0.25rem;
+}

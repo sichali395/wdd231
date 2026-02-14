@@ -1,9 +1,14 @@
 /**
  * Kisyombe Village Heritage - Attributions Page
- * External JavaScript file - REQUIRED BY AUDIT
+ * External JavaScript file - NOW EXISTS
+ * WDD 231 Final Project
  */
 
 document.addEventListener('DOMContentLoaded', function () {
+    'use strict';
+
+    console.log('Attributions page loaded');
+
     // Set current year in footer
     const yearElement = document.getElementById('currentYear');
     if (yearElement) {
@@ -19,6 +24,22 @@ document.addEventListener('DOMContentLoaded', function () {
             const expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
             this.setAttribute('aria-expanded', expanded);
             navMenu.classList.toggle('show');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navMenu.classList.remove('show');
+            }
+        });
+
+        // Close menu on window resize
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('show');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
         });
     }
 });
